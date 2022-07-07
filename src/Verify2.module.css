@@ -1,0 +1,138 @@
+.verifyRoot {
+  width: 338px;
+  height: 782px;
+  background-color: #ffffff;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  align-items: flex-start;
+  padding: 15px 18px 15px 19px;
+}
+.statusBar {
+  width: 338px;
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0px 0px 49px 0px;
+}
+.element3 {
+  align-self: stretch;
+  width: 50px;
+  height: 15px;
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 229px 0px 0px;
+}
+.image1 {
+  width: 12px;
+  height: 10px;
+  position: absolute;
+  top: 2px;
+  left: 38px;
+}
+.text1 {
+  width: 45px;
+  font-size: 13px;
+  font-family: Roboto;
+  font-weight: 700;
+  color: #282828;
+  position: absolute;
+}
+.image2 {
+  width: 14px;
+  height: 12px;
+  margin: 0px 5px 0px 0px;
+}
+.image3 {
+  width: 16px;
+  height: 11px;
+  margin: 0px 5px 0px 0px;
+}
+.image4 {
+  width: 19px;
+  height: 10px;
+}
+.flexRow {
+  align-self: stretch;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 221px;
+  align-items: flex-start;
+  padding: 0px 7px;
+  margin: 0px 0px 25px 0px;
+}
+.back {
+  width: 47px;
+  height: 50px;
+}
+.geda {
+  width: 49px;
+  height: 50px;
+  align-self: flex-end;
+}
+.text2 {
+  font-size: 20px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0px 0px 5px 13px;
+}
+.text3 {
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.4);
+  margin: 0px 0px 25px 13px;
+}
+.flexRow1 {
+  width: 256px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 11px;
+  align-items: center;
+  margin: 0px 0px 39px 13px;
+}
+.element6 {
+  width: 56px;
+  height: 53px;
+  position: relative;
+  flex-grow: 1;
+}
+.text4 {
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  align-self: center;
+  margin: 0px 0px 8px 0px;
+}
+.text5 {
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(79, 13, 163, 0.4);
+  align-self: center;
+  margin: 0px 0px 341px 0px;
+}
+.purpleHeartText {
+  display: flex;
+  font-size: 17px;
+  font-family: Ubuntu;
+  font-weight: 300;
+  color: #ffffff;
+  width: 321px;
+  height: 20px;
+  background-color: rgba(79, 13, 163, 0.5);
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 18px 0px 20px 0px;
+  margin: 0px 0px 0px 8px;
+}

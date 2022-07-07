@@ -1,0 +1,403 @@
+.homeRoot {
+  width: 375px;
+  height: 3651px;
+  background-color: #f9f9f9;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  align-items: flex-end;
+}
+.whiteFlexColumn {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  height: 222px;
+  background-color: #ffffff;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 18px 15px 19px;
+  margin: 0px 0px 22px 0px;
+}
+.statusBar {
+  width: 338px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0px 0px 41px 0px;
+}
+.element15 {
+  align-self: stretch;
+  width: 50px;
+  height: 15px;
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 229px 0px 0px;
+}
+.image1 {
+  width: 12px;
+  height: 10px;
+  position: absolute;
+  top: 2px;
+  left: 38px;
+}
+.text1 {
+  width: 45px;
+  font-size: 13px;
+  font-family: Roboto;
+  font-weight: 700;
+  color: #282828;
+  position: absolute;
+}
+.image2 {
+  width: 14px;
+  height: 12px;
+  margin: 0px 5px 0px 0px;
+}
+.image3 {
+  width: 16px;
+  height: 11px;
+  margin: 0px 5px 0px 0px;
+}
+.image4 {
+  width: 19px;
+  height: 10px;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 13px;
+  align-items: center;
+  margin: 0px 0px 26px 0px;
+}
+.geda {
+  width: 49px;
+  height: 50px;
+}
+.flexRow1 {
+  border-width: 1px;
+  border-color: rgba(40, 40, 40, 0.4);
+  border-style: solid;
+  width: 246px;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 36px;
+  align-items: center;
+  border-radius: 5px;
+  padding: 13px 9px 9px 9px;
+  margin: 4px 0px 0px 0px;
+}
+.text2 {
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.4);
+  align-self: flex-start;
+  padding: 0px;
+  border-width: 0px;
+  background: none;
+  width: 100%;
+  :: placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  display: inline-block;
+  outline-width: 0px;
+}
+.search {
+  width: 15px;
+  height: 15px;
+}
+.ad {
+  width: 338px;
+  height: 79px;
+}
+.whiteFlexRow {
+  width: 357px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 11px 0px;
+}
+.purpleHeartText {
+  display: flex;
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: #ffffff;
+  width: 93px;
+  height: 17px;
+  background-color: #4e0ca2;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 7px;
+  padding: 7px 0px 8px 0px;
+  margin: 0px 4px 0px 0px;
+}
+.text3 {
+  display: flex;
+  font-size: 15px;
+  font-family: Arial;
+  font-weight: 400;
+  color: rgba(12, 12, 12, 0.4);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.25);
+  border-style: solid;
+  width: 32px;
+  height: 17px;
+  flex-direction: row;
+  border-radius: 7px;
+  padding: 6px 33px 7px 26px;
+  margin: 0px 4px 0px 0px;
+}
+.text4 {
+  display: flex;
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(12, 12, 12, 0.4);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.25);
+  border-style: solid;
+  width: 34px;
+  height: 17px;
+  flex-direction: row;
+  border-radius: 7px;
+  padding: 6px 31px 7px 26px;
+  margin: 0px 5px 0px 0px;
+}
+.element16 {
+  width: 61px;
+  height: 32px;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+}
+.element17 {
+  width: 61px;
+  height: 32px;
+  position: absolute;
+}
+.element18 {
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.25);
+  border-style: solid;
+  width: 60px;
+  height: 30px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  border-radius: 7px;
+}
+.text5 {
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(12, 12, 12, 0.4);
+  width: 35px;
+  height: 17px;
+  position: absolute;
+  top: 7px;
+  left: 26px;
+}
+.element19 {
+  align-self: stretch;
+  height: 523px;
+  position: relative;
+  min-width: 375px;
+  margin: 0px 0px 18px 0px;
+}
+.flexColumn {
+  display: flex;
+  position: absolute;
+  left: 8px;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+}
+.element21 {
+  height: 229.95px;
+  position: relative;
+  min-width: 325px;
+  align-items: center;
+  margin: 0px 0px 8.05px 0px;
+}
+.unsplashsqPLlXc {
+  width: 313px;
+  background-image: url("https://file.rendit.io/n/uvuR75SyyXMyYLSyw0ym.png");
+  background-size: cover;
+  position: absolute;
+  left: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 77px 0px 78px 0px;
+}
+.options {
+  width: 33px;
+  height: 11px;
+  position: absolute;
+  top: 204.5px;
+  left: 278.5px;
+}
+.image5 {
+  width: 22px;
+  height: 23px;
+  position: absolute;
+  top: 205px;
+  left: 58px;
+}
+.image6 {
+  width: 26.95px;
+  height: 26.95px;
+  position: absolute;
+  top: 203px;
+  left: 168px;
+}
+.image7 {
+  width: 26.19px;
+  height: 26.95px;
+  position: absolute;
+  top: 203px;
+}
+.image8 {
+  width: 26.95px;
+  height: 26.02px;
+  position: absolute;
+  top: 203px;
+  left: 112px;
+}
+.text13 {
+  display: flex;
+  font-size: 35px;
+  font-family: Ubuntu;
+  font-weight: 300;
+  color: #ffffff;
+  width: 62px;
+  height: 40px;
+  background-image: url("https://file.rendit.io/n/Jswkb6rIuWfF0BV8kHgL.svg");
+  background-size: cover;
+  position: absolute;
+  top: 164px;
+  left: 259px;
+  flex-direction: row;
+  justify-content: center;
+  padding: 9px 0px 13px 0px;
+}
+.whiteFlexRow1 {
+  box-shadow: 10px 0px 12px 1px rgba(0, 0, 0, 0.05);
+  width: 329px;
+  background-color: #ffffff;
+  display: flex;
+  position: absolute;
+  top: 397px;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px 20px 40px 26px;
+}
+.home1 {
+  width: 32px;
+  height: 41px;
+  align-self: flex-start;
+  position: relative;
+  margin: 0px 40px 0px 0px;
+}
+.house {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+}
+.text22 {
+  font-size: 10px;
+  font-family: Ubuntu;
+  font-weight: 300;
+  color: #4e0ca2;
+  position: absolute;
+  top: 30px;
+  left: 2px;
+}
+.messages2 {
+  width: 44px;
+  height: 43px;
+  position: relative;
+  margin: 0px 28px 0px 0px;
+}
+.image9 {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -1601px;
+  left: -1257px;
+}
+.messages1 {
+  width: 44px;
+  height: 39px;
+  position: absolute;
+  top: 4px;
+}
+.text25 {
+  font-size: 10px;
+  font-family: Ubuntu;
+  font-weight: 300;
+  color: rgba(40, 40, 40, 0.5);
+  position: absolute;
+  top: 28px;
+}
+.flexRow6 {
+  width: 17.98px;
+  background-image: url("https://file.rendit.io/n/WzixUI5zNK57p0mirFL8.svg");
+  background-size: cover;
+  position: absolute;
+  top: -1px;
+  left: 9px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 3px;
+  align-items: center;
+  padding: 10px 4px 12.98px 4px;
+}
+.flexRow12 {
+  height: 59px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 25px;
+  align-items: flex-start;
+  padding: 0px 8px;
+}
+.flexRow13 {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.ellipse10 {
+  width: 50px;
+  height: 50px;
+}
+.flexColumn5 {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2px;
+  flex-grow: 1;
+  align-items: flex-start;
+  padding: 3px 0px;
+}
+.image17 {
+  width: 33px;
+  height: 32px;
+}

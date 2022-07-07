@@ -1,0 +1,371 @@
+.profileRoot {
+  width: 375px;
+  height: 2218px;
+  background-color: #ffffff;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  align-items: center;
+}
+.element8 {
+  height: 135px;
+  position: relative;
+  min-width: 375px;
+}
+.whiteFlexColumn {
+  background-color: #ffffff;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  padding: 15px 18px 13px 19px;
+}
+.statusBar {
+  width: 338px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+.element9 {
+  align-self: stretch;
+  width: 50px;
+  height: 15px;
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 229px 0px 0px;
+}
+.image1 {
+  width: 12px;
+  height: 10px;
+  position: absolute;
+  top: 2px;
+  left: 38px;
+}
+.text1 {
+  width: 45px;
+  font-size: 13px;
+  font-family: Roboto;
+  font-weight: 700;
+  color: #282828;
+  position: absolute;
+}
+.image2 {
+  width: 14px;
+  height: 12px;
+  margin: 0px 5px 0px 0px;
+}
+.image3 {
+  width: 16px;
+  height: 11px;
+  margin: 0px 5px 0px 0px;
+}
+.image4 {
+  width: 19px;
+  height: 10px;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  gap: 207px;
+  align-items: center;
+  padding: 0px 13px 0px 10px;
+}
+.text2 {
+  font-size: 23px;
+  font-family: Ubuntu;
+  font-weight: 700;
+  color: #4e0ca2;
+  align-self: flex-start;
+}
+.whiteRectangle {
+  width: 375px;
+  height: 135px;
+  background-color: #ffffff;
+  position: absolute;
+  top: -203px;
+  left: 1036px;
+}
+.element10 {
+  height: 122px;
+  position: relative;
+  min-width: 375px;
+  margin: 0px 0px 8px 0px;
+}
+.ellipse {
+  width: 104px;
+  height: 104px;
+  position: absolute;
+  top: 9px;
+  left: 136px;
+}
+.ellipse1 {
+  width: 120px;
+  height: 122px;
+  position: absolute;
+  left: 128px;
+}
+.text3 {
+  font-size: 18px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0px 0px 3px 0px;
+}
+.text4 {
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8);
+  align-self: flex-end;
+  margin: 0px 0px 2px 0px;
+}
+.text5 {
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8);
+}
+.purpleHeartFlexRow {
+  background-color: #4e0ca2;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  border-radius: 10px;
+  padding: 11px 19px 9px 26px;
+  margin: 0px 0px 26px 0px;
+}
+.element11 {
+  width: 322px;
+  height: 41px;
+  align-self: flex-start;
+  position: relative;
+  margin: 0px 0px 23px 23px;
+}
+.text6 {
+  font-size: 14px;
+  font-family: Ubuntu;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 14px;
+  left: 35px;
+}
+.text7 {
+  font-size: 14px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 13px;
+  left: 205px;
+}
+.line1 {
+  width: 322px;
+  height: 2px;
+  position: absolute;
+  left: 0.5px;
+}
+.line2 {
+  width: 322px;
+  height: 2px;
+  position: absolute;
+  top: 40px;
+  left: 0.5px;
+}
+.line3 {
+  width: 1px;
+  height: 40px;
+  position: absolute;
+  top: -39.5px;
+  left: 164.5px;
+}
+.element12 {
+  height: 523px;
+  position: relative;
+  min-width: 375px;
+  margin: 0px 0px 30px 0px;
+}
+.line {
+  width: 322px;
+  height: 2px;
+  position: absolute;
+  top: 210px;
+  left: 23.5px;
+}
+.flexColumn {
+  display: flex;
+  position: absolute;
+  left: 8px;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+}
+.ellipse3 {
+  height: 50px;
+  background-image: url("https://file.rendit.io/n/ZLFPU0WpjNcbUncMW7wL.png");
+  background-size: cover;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 4px 0px 32px;
+  margin: 0px 8px 0px 0px;
+}
+.verified {
+  width: 14px;
+  height: 14px;
+}
+.unsplashsqPLlXc {
+  width: 313px;
+  background-image: url("https://file.rendit.io/n/BxDuZ03VPRlcMLTNtJRD.png");
+  background-size: cover;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 77px 0px 78px 0px;
+  margin: 0px 0px 16px 3px;
+}
+.image5 {
+  width: 26.19px;
+  height: 26.95px;
+  margin: 0px 32.81px 0px 0px;
+}
+.image6 {
+  width: 22px;
+  height: 23px;
+  margin: 0px 31px 0px 0px;
+}
+.image8 {
+  width: 26.95px;
+  height: 26.95px;
+  margin: 0px 84.55px 0px 0px;
+}
+.whiteFlexRow {
+  box-shadow: 10px 0px 12px 1px rgba(0, 0, 0, 0.05);
+  width: 329px;
+  background-color: #ffffff;
+  display: flex;
+  position: absolute;
+  top: 239px;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px 20px 40px 26px;
+}
+.home1 {
+  width: 32px;
+  height: 41px;
+  align-self: flex-start;
+  position: relative;
+  margin: 0px 40px 0px 0px;
+}
+.house {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+}
+.text21 {
+  font-size: 10px;
+  font-family: Ubuntu;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 30px;
+  left: 2px;
+}
+.text23 {
+  font-size: 10px;
+  font-family: Ubuntu;
+  font-weight: 300;
+  color: #4e0ca2;
+}
+.messages2 {
+  width: 44px;
+  height: 43px;
+  position: relative;
+  margin: 0px 28px 0px 0px;
+}
+.image9 {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -1602px;
+  left: -2930px;
+}
+.messages1 {
+  width: 44px;
+  height: 39px;
+  position: absolute;
+  top: 4px;
+}
+.text24 {
+  font-size: 10px;
+  font-family: Ubuntu;
+  font-weight: 300;
+  color: rgba(40, 40, 40, 0.5);
+  position: absolute;
+  top: 28px;
+}
+.flexRow8 {
+  width: 17.98px;
+  background-image: url("https://file.rendit.io/n/G8M9fU5VLogTcRpS0hDa.svg");
+  background-size: cover;
+  position: absolute;
+  top: -1px;
+  left: 9px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 3px;
+  align-items: center;
+  padding: 10px 4px 12.98px 4px;
+}
+.flexRow9 {
+  height: 59px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 25px;
+  align-items: flex-start;
+  padding: 0px 8px;
+}
+.flexRow10 {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.ellipse4 {
+  width: 50px;
+  height: 50px;
+}
+.flexColumn3 {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2px;
+  flex-grow: 1;
+  align-items: flex-start;
+  padding: 3px 0px;
+}
+.image13 {
+  width: 33px;
+  height: 32px;
+}
+.ellipse6 {
+  width: 50px;
+  height: 50px;
+  align-self: flex-end;
+  margin: 0px 8px 0px 0px;
+}

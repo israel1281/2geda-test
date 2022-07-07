@@ -1,0 +1,18 @@
+.splashRoot {
+  width: 208px;
+  height: 230px;
+  background-color: #4e0ca2;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: auto;
+  align-items: center;
+  padding: 291px 83px 291px 84px;
+}
+.text1 {
+  font-size: 15px;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #ffffff;
+}

@@ -1,0 +1,508 @@
+.outletRoot {
+  width: 375px;
+  height: 1868px;
+  background-color: #ffffff;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  align-items: flex-end;
+}
+.whiteFlexColumn {
+  height: 174px;
+  background-color: #ffffff;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 18px 13px 19px;
+  margin: 0px 0px 16px 0px;
+}
+.statusBar {
+  width: 338px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0px 0px 32px 0px;
+}
+.element32 {
+  align-self: stretch;
+  width: 50px;
+  height: 15px;
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 229px 0px 0px;
+}
+.image1 {
+  width: 12px;
+  height: 10px;
+  position: absolute;
+  top: 2px;
+  left: 38px;
+}
+.text1 {
+  width: 45px;
+  font-size: 13px;
+  font-family: Roboto;
+  font-weight: 700;
+  color: #282828;
+  position: absolute;
+}
+.image2 {
+  width: 14px;
+  height: 12px;
+  margin: 0px 5px 0px 0px;
+}
+.image3 {
+  width: 16px;
+  height: 11px;
+  margin: 0px 5px 0px 0px;
+}
+.image4 {
+  width: 19px;
+  height: 10px;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 6px 0px 4px;
+  margin: 0px 0px 2px 0px;
+}
+.back {
+  width: 47px;
+  height: 50px;
+  margin: 0px 81px 0px 0px;
+}
+.text2 {
+  font-size: 23px;
+  font-family: Ubuntu;
+  font-weight: 700;
+  color: #4e0ca2;
+  margin: 0px 49px 0px 0px;
+}
+.purpleHeartText {
+  display: flex;
+  font-size: 7px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  align-self: flex-end;
+  width: 78px;
+  height: 8px;
+  background-color: #4e0ca2;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 5px 0px;
+  margin: 0px 0px 15px 0px;
+}
+.text3 {
+  font-size: 14px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0px 0px 18px 0px;
+}
+.flexRow1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+}
+.flexRow2 {
+  border-width: 1px;
+  border-color: rgba(40, 40, 40, 0.4);
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  gap: 49px;
+  align-items: center;
+  border-radius: 5px;
+  padding: 15px 13px 12px 9px;
+}
+.text4 {
+  font-size: 8px;
+  font-family: Ubuntu;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.4);
+  align-self: flex-start;
+  white-space: pre-wrap;
+  padding: 0px;
+  border-width: 0px;
+  background: none;
+  width: 100%;
+  :: placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  display: inline-block;
+  outline-width: 0px;
+}
+.search {
+  width: 10px;
+  height: 10px;
+}
+.purpleHeartText1 {
+  display: flex;
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: #ffffff;
+  width: 114px;
+  height: 14px;
+  background-color: #4e0ca2;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 13px 0px 12px 0px;
+}
+.whiteFlexRow {
+  width: 349px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 5px;
+  margin: 0px 0px 32px 0px;
+}
+.text5 {
+  display: flex;
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-style: solid;
+  width: 34px;
+  height: 17px;
+  position: absolute;
+  left: -99px;
+  flex-direction: row;
+  border-radius: 7px;
+  padding: 6px 33px 7px 24px;
+}
+.cottonCandyText {
+  display: flex;
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+  width: 93px;
+  height: 17px;
+  background-color: #d8b5d3;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 7px;
+  padding: 7px 0px 8px 0px;
+}
+.text6 {
+  display: flex;
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(12, 12, 12, 0.4);
+  align-self: center;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.25);
+  border-style: solid;
+  width: 33px;
+  height: 17px;
+  flex-direction: row;
+  border-radius: 7px;
+  padding: 6px 32px 7px 26px;
+}
+.element35 {
+  width: 53px;
+  height: 32px;
+  position: absolute;
+}
+.element36 {
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.25);
+  border-style: solid;
+  width: 52px;
+  height: 30px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  border-radius: 7px;
+}
+.text7 {
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(12, 12, 12, 0.4);
+  width: 34px;
+  height: 17px;
+  position: absolute;
+  top: 7px;
+  left: 19px;
+}
+.erty {
+  display: flex;
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(12, 12, 12, 0.4);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.25);
+  border-style: solid;
+  width: 91px;
+  height: 17px;
+  position: absolute;
+  top: -1px;
+  left: 98px;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 7px;
+  padding: 6px 0px 7px 0px;
+}
+.text8 {
+  display: flex;
+  font-size: 15px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(12, 12, 12, 0.4);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.25);
+  border-style: solid;
+  width: 54px;
+  height: 17px;
+  position: absolute;
+  top: -1px;
+  left: 197px;
+  flex-direction: row;
+  border-radius: 7px;
+  padding: 6px 15px 7px 22px;
+}
+.whiteFlexRow1 {
+  height: 164px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0px 0px 43px 0px;
+}
+.element37 {
+  height: 124px;
+  position: relative;
+  min-width: 4px;
+  margin: 0px 0px 5px 0px;
+}
+.unsplashDvTcioYua {
+  width: 4px;
+  height: 124px;
+  position: absolute;
+}
+.unsplashydMzpsM {
+  width: 111px;
+  height: 124px;
+  position: absolute;
+  left: 118px;
+}
+.unsplashgVhArbSpQ {
+  width: 111px;
+  height: 124px;
+  position: absolute;
+  left: 236px;
+}
+.element38 {
+  height: 15px;
+  position: relative;
+  min-width: 4px;
+}
+.text19 {
+  font-size: 13px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  width: 4px;
+  height: 15px;
+  position: absolute;
+}
+.element39 {
+  height: 10px;
+  position: relative;
+  min-width: 4px;
+  margin: 0px 0px 1px 0px;
+}
+.text22 {
+  font-size: 9px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8);
+  width: 4px;
+  height: 10px;
+  position: absolute;
+}
+.element40 {
+  height: 8px;
+  position: relative;
+  min-width: 4px;
+}
+.text25 {
+  font-size: 7px;
+  font-family: Ubuntu;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.8);
+  width: 3px;
+  height: 8px;
+  position: absolute;
+  left: 1px;
+}
+.flexRow7 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  gap: 191px;
+  align-items: center;
+  padding: 0px 25px 0px 21px;
+  margin: 0px 0px 11px 0px;
+}
+.whiteRectangle {
+  width: 354px;
+  height: 164px;
+  background-color: #ffffff;
+  position: relative;
+  margin: 0px 0px 17px 0px;
+}
+.element41 {
+  align-self: stretch;
+  height: 94px;
+  position: relative;
+  min-width: 375px;
+  margin: 0px 0px 29px 0px;
+}
+.ad {
+  width: 338px;
+  height: 79px;
+  position: absolute;
+  top: 15px;
+  left: 19px;
+}
+.whiteFlexColumn1 {
+  height: 77px;
+  background-color: #ffffff;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 16px;
+}
+.purpleHeartText2 {
+  display: flex;
+  font-size: 14px;
+  font-family: Ubuntu;
+  font-weight: 400;
+  color: #ffffff;
+  width: 343px;
+  height: 16px;
+  background-color: #4e0ca2;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 14px 0px 13px 0px;
+}
+.flexRow16 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 22px;
+  margin: 0px 0px 11px 0px;
+}
+.text48 {
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  align-self: flex-start;
+  margin: 3px 0px 0px 0px;
+}
+.whiteRectangle1 {
+  width: 353px;
+  height: 164px;
+  background-color: #ffffff;
+  position: relative;
+  margin: 0px 0px 29px 0px;
+}
+.text49 {
+  display: flex;
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  width: 37px;
+  height: 74px;
+  background-image: url("https://file.rendit.io/n/CEP7CdkX0lipJHIOc0Ny.png");
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 25px 17px 25px 57px;
+}
+.flexRow25 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 106px;
+  align-items: center;
+  padding: 0px 13px;
+  margin: 0px 0px 11px 0px;
+}
+.text70 {
+  display: flex;
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  width: 37px;
+  height: 86px;
+  background-image: url("https://file.rendit.io/n/rsyN74nSRK4MwGynQN0w.png");
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 19px 17px 19px 57px;
+}
+.flexRow34 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 128px;
+  align-items: center;
+  padding: 0px 15px;
+  margin: 0px 0px 11px 0px;
+}
+.whiteRectangle3 {
+  width: 351px;
+  height: 164px;
+  background-color: #ffffff;
+  position: relative;
+  margin: 0px 0px 32px 0px;
+}
+.text91 {
+  display: flex;
+  font-size: 12px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  width: 37px;
+  height: 80px;
+  background-image: url("https://file.rendit.io/n/gxoxtYCzFbDUJcFh8xLv.png");
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px 19px 22px 55px;
+}
