@@ -10,6 +10,7 @@ import { Outlet2 } from "./Outlet2";
 import { ForgetPassword1 } from "./ForgetPassword1";
 import { People2 } from "./People2";
 import { Upload2 } from "./Upload2";
+import { PostPreview1 } from "./PostPreview1";
 
 export default function App() {
   document.body.style.backgroundColor = "#e5e5e5";
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/forget-password" element={<ForgetPassword1 />} />
         <Route path="/profile-details" element={<ProfileDetails2 />} />
         <Route path="/upload" element={<Upload2 />} />
+        <Route path="/post-preview" element={<PostPreview1 />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,6 +1,59 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Createpost } from "./Api/Feed";
+import { useNavigate } from "react-router-dom";
+import ReactLoading from "react-loading";
 import styled from "styled-components";
+
 export const Upload2 = ({}) => {
+  const [loading, setLoading] = useState(false);
+  const [message_post, setMessage_post] = useState("");
+  const [images, setImages] = useState([]);
+  const [imageURLs, setImageURLs] = useState([]);
+  const [videos, setVideos] = useState([]);
+  const [videoURLs, setVideoURLs] = useState([]);
+
+  const access_token = sessionStorage.getItem("access_token");
+
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    //loop through each image and convert to objecturl
+    for (let i = 0; i < images.length; i++) {
+      const reader = new FileReader();
+      reader.readAsDataURL(images[i]);
+      reader.onload = () => {
+        setImageURLs((imageURLs) => [...imageURLs, reader.result]);
+      };
+    }
+  }, [images]);
+
+  React.useEffect(() => {
+    //loop through each video and convert to objecturl
+    for (let i = 0; i < videos.length; i++) {
+      const reader = new FileReader();
+      reader.readAsDataURL(videos[i]);
+      reader.onload = () => {
+        setVideoURLs((videoURLs) => [...videoURLs, reader.result]);
+      };
+    }
+  }, [videos]);
+
+  const onImageChange = (e) => {
+    for (let i = 0; i < e.target.files.length; i++) {
+      if (e.target.files[i].type.includes("video")) {
+        setVideos([...e.target.files]);
+      } else if (e.target.files[i].type.includes("image")) {
+        setImages([...e.target.files]);
+      }
+    }
+  };
+
+  const fileInput = React.useRef(null);
+
+  const handleChangeInput = (e) => {
+    setMessage_post(e.target.value);
+  };
+
   return (
     <UploadRoot>
       <FlexRow>
@@ -8,29 +61,81 @@ export const Upload2 = ({}) => {
           <Text1>Update your feed</Text1>
           <Text2>How are you doing today?</Text2>
         </FlexColumn>
-        <X src={"https://file.rendit.io/n/MWlSeGqTqTvqjg8sNIwF.svg"} />
+        <X
+          onClick={() => {
+            navigate("/home");
+          }}
+          src={"https://file.rendit.io/n/MWlSeGqTqTvqjg8sNIwF.svg"}
+        />
       </FlexRow>
       <Element1>
         <Text3>You can write up to 1,000 words</Text3>
-        <SilverRectangle placeholder="You can write p to 1,000 words" />
+        <SilverRectangle
+          type="text"
+          name="message_post"
+          value={message_post}
+          onChange={handleChangeInput}
+          placeholder="You can write p to 1,000 words"
+        />
       </Element1>
-      <ManateeFlexRow>
+      <ManateeFlexRow
+        onClick={() => {
+          fileInput.current.click();
+        }}
+      >
         <Text4>Add images or Videos</Text4>
       </ManateeFlexRow>
+      <input
+        type="file"
+        name=""
+        multiple={true}
+        ref={fileInput}
+        accept="image/*, video/*"
+        onChange={onImageChange}
+        style={{ display: "none" }}
+      />
       <FlexRow1>
-        <Image1 src={"https://file.rendit.io/n/SBRQWxPR9NhzndIosgTs.png"} />
-        <UnsplashyPAZYqs>
-          <Image2 src={"https://file.rendit.io/n/DA5qlisUz0qr10aLQdy8.svg"} />
-        </UnsplashyPAZYqs>
-        <Image1 src={"https://file.rendit.io/n/XeC8yqdugPEhx1hyMZbA.png"} />
-        <SilverSquare />
+        {imageURLs.map((image, index) => {
+          return (
+            <div key={index}>
+              <Image1 src={image} />
+            </div>
+          );
+        })}
+        {videoURLs.map((video, index) => {
+          return (
+            <div key={index}>
+              <Video1 src={video} controls />
+            </div>
+          );
+        })}
       </FlexRow1>
-      <Text5 margin={"0px 0px 14.5px 26px"}>Tag Friends</Text5>
-      <Line src={"https://file.rendit.io/n/efHpnPcxTmd17H15IWfY.svg"} />
-      <Text5 margin={"0px 0px 12.5px 26px"}>Add Location</Text5>
-      <Line1 src={"https://file.rendit.io/n/efHpnPcxTmd17H15IWfY.svg"} />
-      <Text5 margin={"0px 0px 21px 26px"}>Schedule Post</Text5>
-      <PurpleHeartText>Upload</PurpleHeartText>
+      {!loading ? (
+        <PurpleHeartText
+          onClick={() => {
+            Createpost(
+              images,
+              videos,
+              message_post,
+              access_token,
+              setLoading,
+              navigate
+            );
+          }}
+        >
+          Continue
+        </PurpleHeartText>
+      ) : (
+        <PurpleHeartText>
+          <ReactLoading
+            type="cylon"
+            color="#fff"
+            height={40}
+            width={40}
+            marginTop={20}
+          />
+        </PurpleHeartText>
+      )}
     </UploadRoot>
   );
 };
@@ -120,6 +225,7 @@ const SilverRectangle = styled.textarea`
   }
 `;
 const ManateeFlexRow = styled.div`
+  width: 90%;
   background-color: rgba(165, 156, 172, 0.74);
   display: flex;
   align-self: center;
@@ -130,20 +236,20 @@ const ManateeFlexRow = styled.div`
   margin: 0px 0px 24px 0px;
 `;
 const Text4 = styled.div`
-  width: 154px;
-  font-size: 15px;
+  width: 100%;
+  font-size: 11px;
   font-family: Ubuntu;
   font-weight: 400;
   color: #ffffff;
 `;
 const FlexRow1 = styled.div`
-  align-self: stretch;
+  width: 100%;
   display: flex;
-  flex-direction: row;
   gap: 13px;
   align-items: center;
   padding: 0px 43px 0px 29px;
   margin: 0px 0px 24px 0px;
+  overflow-x: auto;
 `;
 const UnsplashyPAZYqs = styled.div`
   background-image: url("https://file.rendit.io/n/ethodMDoXztDS8D9bDAy.png");
@@ -180,22 +286,22 @@ const PurpleHeartText = styled.div`
   font-weight: 400;
   color: #ffffff;
   align-self: center;
-  width: 318px;
-  height: 17px;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 20px;
   background-color: #4e0ca2;
   flex-direction: row;
   justify-content: center;
   border-radius: 5px;
   padding: 18px 0px;
+  margin-top: 20%;
 `;
 const Image1 = styled.img`
-  width: 66px;
-  height: 66px;
+  width: 100px;
+  height: 100px;
 `;
-const Text5 = styled.div`
-  font-size: 15px;
-  font-family: Ubuntu;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.7);
-  margin: ${(props) => props.margin};
+const Video1 = styled.video`
+  width: 100px;
+  height: 100px;
 `;

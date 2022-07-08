@@ -1,6 +1,5 @@
 import axios from "axios";
 import FormData from "form-data";
-import fs from "fs";
 import { notification } from "antd";
 
 const Erroralert = (message) => {
@@ -19,29 +18,45 @@ const Successalert = (message) => {
   });
 };
 
-export const Createpost = (image, video, message_post, access_token) => {
+export const Createpost = (
+  images,
+  videos,
+  message_post,
+  access_token,
+  setLoading,
+  navigate
+) => {
+  setLoading(true);
   const data = new FormData();
   data.append("message_post", message_post);
-  data.append("image", fs.createReadStream(image));
-  data.append("video[]", fs.createReadStream(video));
+  for (let i = 0; i < images.length; i++) {
+    data.append("images[]", images[i]);
+  }
+  for (let i = 0; i < videos.length; i++) {
+    data.append("videos[]", videos[i]);
+  }
 
   const config = {
     method: "post",
     url: "https://api.2geda.net//api/post",
     headers: {
-      Authorization: "Bearer " + access_token,
-      ...data.getHeaders()
+      Authorization: "Bearer " + access_token
     },
     data: data
   };
 
-  axios(config)
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  axios(config).then(function (response) {
+    setLoading(false);
+    console.log(JSON.stringify(response.data));
+    if (response.data.status === "error") {
+      Erroralert(response.data.message);
+    } else if (response.data.status === "success") {
+      Successalert(response.data.message);
+    }
+  });
+  navigate("/home").catch(function (error) {
+    console.log(error);
+  });
 };
 
 export const ShowPost = (postId, access_token) => {
