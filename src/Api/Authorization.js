@@ -23,10 +23,10 @@ export const Register = (email) => {
     });
 };
 
-export const Verify = (email, token) => {
+export const Verify = (email, otp) => {
   const data = JSON.stringify({
     email,
-    token
+    otp
   });
 
   var config = {
@@ -118,10 +118,10 @@ export const ResetPassword = (email) => {
     });
 };
 
-export const updatePasswordReset = (email, token, password) => {
+export const updatePasswordReset = (email, otp, password) => {
   var data = new FormData();
   data.append("email", email);
-  data.append("token", token);
+  data.append("token", otp);
   data.append("password", password);
 
   var config = {
@@ -141,3 +141,45 @@ export const updatePasswordReset = (email, token, password) => {
       console.log(error);
     });
 };
+
+export const Login = (email, password) => {
+  var data = JSON.stringify({
+    "email": email,
+    "password": password
+  });
+  
+  var config = {
+    method: 'post',
+    url: 'https://logosabroad.com/api/public//api/login',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
+  
+  axios(config)
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+
+export const Logout = (access_token) => {
+  var config = {
+    method: 'post',
+    url: 'https://logosabroad.com/api/public//api/logout',
+    headers: { 
+      'Authorization': 'Bearer ' + access_token
+    }
+  };
+  
+  axios(config)
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
