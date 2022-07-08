@@ -1,87 +1,80 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom"
-import {Splash1} from './Splash1'
-import { Carousel } from 'antd'
-
+import { useNavigate } from "react-router-dom";
+import { Splash1 } from "./Splash1";
+import { Carousel } from "antd";
 
 const LandingIntro = [
-    {
-        title: 'Unlock Business and Personal Potentials'
-    },
-    {
-        title: 'Connect with Business around your locality'
-    },
-    {
-        title: 'Post free ads instantly on the Marketplace'
-    }
-]
+  {
+    title: "Unlock Business and Personal Potentials"
+  },
+  {
+    title: "Connect with Business around your locality"
+  },
+  {
+    title: "Post free ads instantly on the Marketplace"
+  }
+];
 
 export const Onboarding1 = ({}) => {
-const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-    }
-      , 5000);
+    }, 5000);
   }, []);
 
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   const Landing = () => {
     return (
-       <OnboardingRoot>
-      <GEDA src={"https://file.rendit.io/n/lEe43NhdRn0Jp6gejHVT.png"} />
-      <Element3>
-        <Carousel autoplay>
-                        {LandingIntro.map((item, index) => {
-                            return (
-                                <div  key={index}>
-                                <div style={{
-                                  width: "70%",
-                                  fontSize: "30px",
-                                  fontWeight: "500"
-                                }}>
-                                       {item.title}
-                                </div>
-                                <div className='intro-text'>
-                                    <p>
-                                        Meet prospective clients and vendors for your next product or service needs
-                                    </p>
-                                </div>
-                                </div>
-                            )
-                        }
-                        )}
-                    </Carousel>
-      </Element3>
-      <PurpleHeartText 
-      onClick={
-        () => {
-          navigate("/signup")
-        }
-      }>Open an account</PurpleHeartText>
-      <Text2
-        onClick={
-        () => {
-          navigate("/signin")
-        }
-        }>Sign in</Text2>
-    </OnboardingRoot>
-    )
-  }
-  return (
-   <>
-    {
-      isLoading ?
-      <Splash1 />
-      : <Landing />
-    }
-   </>
-  );
+      <OnboardingRoot>
+        <GEDA src={"https://file.rendit.io/n/lEe43NhdRn0Jp6gejHVT.png"} />
+        <Element3>
+          <Carousel autoplay>
+            {LandingIntro.map((item, index) => {
+              return (
+                <div key={index}>
+                  <div
+                    style={{
+                      width: "70%",
+                      fontSize: "35px",
+                      fontWeight: "500"
+                    }}
+                  >
+                    {item.title}
+                  </div>
+                  <div className="intro-text">
+                    <p>
+                      Meet prospective clients and vendors for your next product
+                      or service needs
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </Carousel>
+        </Element3>
+        <PurpleHeartText
+          onClick={() => {
+            navigate("/signup");
+          }}
+        >
+          Open an account
+        </PurpleHeartText>
+        <Text2
+          onClick={() => {
+            navigate("/signin");
+          }}
+        >
+          Sign in
+        </Text2>
+      </OnboardingRoot>
+    );
+  };
+  return <>{isLoading ? <Splash1 /> : <Landing />}</>;
 };
 const OnboardingRoot = styled.div`
   width: 100%;
@@ -141,5 +134,5 @@ const Text2 = styled.div`
   border-radius: 10px;
   padding: 18px 0px;
   margin: 0px 0px 0px 7px;
-  cursor: pointer
+  cursor: pointer;
 `;

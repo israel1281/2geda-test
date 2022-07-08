@@ -1,5 +1,23 @@
 import axios from "axios";
 import FormData from "form-data";
+import { notification } from "antd";
+import { validateEmail } from "../Data";
+
+const Erroralert = (message) => {
+  notification.error({
+    message: message,
+    placement: "topLeft",
+    duration: 4
+  });
+};
+
+const Successalert = (message) => {
+  notification.success({
+    message: message,
+    placement: "topLeft",
+    duration: 4
+  });
+};
 
 export const Register = (email) => {
   const data = new FormData();
@@ -50,7 +68,7 @@ export const Verify = (email, otp) => {
 export const resendVerifyCode = (email) => {
   var config = {
     method: "patch",
-    url: `https://logosabroad.com/api/public//api/resendToken?email=${email}`,
+    url: `https://api.2geda.net//api/resendToken?email=${email}`,
     headers: {}
   };
 
@@ -96,22 +114,33 @@ export const registerUserDetails = (
     });
 };
 
-export const ResetPassword = (email) => {
+export const ResetPassword = (email, setLoading) => {
   const data = new FormData();
   data.append("email", email);
+
+  if (!validateEmail(email)) {
+    Erroralert("Your email is required");
+    return;
+  }
 
   var config = {
     method: "post",
     url: "https://api.2geda.net/api/password/email",
-    headers: {
-      ...data.getHeaders()
-    },
+    headers: {},
     data: data
   };
-
+  setLoading(true);
   axios(config)
     .then(function (response) {
+      setLoading(false);
       console.log(JSON.stringify(response.data));
+      if (response.data.status === "success") {
+        Successalert(response.data.message);
+        setLoading(false);
+      } else if (response.data.status === "error") {
+        Erroralert(response.data.message);
+        setLoading(false);
+      }
     })
     .catch(function (error) {
       console.log(error);
@@ -142,44 +171,54 @@ export const updatePasswordReset = (email, otp, password) => {
     });
 };
 
-export const Login = (email, password) => {
+export const Login = (email, password, setLoading, navigate, validateForm) => {
+  setLoading(true);
+  validateForm();
   var data = JSON.stringify({
-    "email": email,
-    "password": password
+    email: email,
+    password: password
   });
-  
+
   var config = {
-    method: 'post',
-    url: 'https://logosabroad.com/api/public//api/login',
-    headers: { 
-      'Content-Type': 'application/json'
+    method: "post",
+    url: "https://api.2geda.net//api/login",
+    headers: {
+      "Content-Type": "application/json"
     },
-    data : data
+    data: data
   };
-  
   axios(config)
-  .then(function (response) {
-    console.log(JSON.stringify(response.data));
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}
+    .then(function (response) {
+      setLoading(false);
+      console.log(JSON.stringify(response.data));
+      sessionStorage.setItem("access_token", response.data.access_token);
+      sessionStorage.setItem(
+        "currentUser",
+        JSON.stringify(response.data.user.id)
+      );
+      Successalert(response.data.message);
+      navigate("/home");
+    })
+    .catch(function (error) {
+      console.log(error);
+      Erroralert(error);
+    });
+};
 
 export const Logout = (access_token) => {
   var config = {
-    method: 'post',
-    url: 'https://logosabroad.com/api/public//api/logout',
-    headers: { 
-      'Authorization': 'Bearer ' + access_token
+    method: "post",
+    url: "https://api.2geda.net//api/logout",
+    headers: {
+      Authorization: "Bearer " + access_token
     }
   };
-  
+
   axios(config)
-  .then(function (response) {
-    console.log(JSON.stringify(response.data));
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};

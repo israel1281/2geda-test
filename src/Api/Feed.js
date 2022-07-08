@@ -1,6 +1,23 @@
 import axios from "axios";
 import FormData from "form-data";
-import fs from "fs.js";
+import fs from "fs";
+import { notification } from "antd";
+
+const Erroralert = (message) => {
+  notification.error({
+    message: message,
+    placement: "topLeft",
+    duration: 4
+  });
+};
+
+const Successalert = (message) => {
+  notification.success({
+    message: message,
+    placement: "topLeft",
+    duration: 4
+  });
+};
 
 export const Createpost = (image, video, message_post, access_token) => {
   const data = new FormData();
@@ -10,7 +27,7 @@ export const Createpost = (image, video, message_post, access_token) => {
 
   const config = {
     method: "post",
-    url: "https://logosabroad.com/api/public//api/post",
+    url: "https://api.2geda.net//api/post",
     headers: {
       Authorization: "Bearer " + access_token,
       ...data.getHeaders()
@@ -32,7 +49,7 @@ export const ShowPost = (postId, access_token) => {
 
   const config = {
     method: "get",
-    url: `https://logosabroad.com/api/public//api/post/${postId}`,
+    url: `https://api.2geda.net//api/post/${postId}`,
     headers: {
       Authorization: "Bearer " + access_token,
       ...data.getHeaders()
@@ -56,7 +73,7 @@ export const EditPostText = (postId, message_post, access_token) => {
 
   const config = {
     method: "patch",
-    url: `https://logosabroad.com/api/public//api/post/${postId}`,
+    url: `https://api.2geda.net//api/post/${postId}`,
     headers: {
       Authorization: "Bearer " + access_token,
       "Content-Type": "application/json"
@@ -78,7 +95,7 @@ export const LikePost = (postId, access_token) => {
 
   const config = {
     method: "post",
-    url: `https://logosabroad.com/api/public//api/like/${postId}`,
+    url: `https://api.2geda.net//api/like/${postId}`,
     headers: {
       Authorization: "Bearer " + access_token
     },
@@ -87,6 +104,7 @@ export const LikePost = (postId, access_token) => {
 
   axios(config)
     .then(function (response) {
+      Successalert(response.data.message);
       console.log(JSON.stringify(response.data));
     })
     .catch(function (error) {
@@ -101,7 +119,7 @@ export const DislikePost = (postId, access_token, email) => {
 
   const config = {
     method: "post",
-    url: `https://logosabroad.com/api/public//api/dislike/${postId}`,
+    url: `https://api.2geda.net/api/dislike/${postId}`,
     headers: {
       Authorization: "Bearer " + access_token
     },
@@ -110,6 +128,7 @@ export const DislikePost = (postId, access_token, email) => {
 
   axios(config)
     .then(function (response) {
+      Successalert(response.data.message);
       console.log(JSON.stringify(response.data));
     })
     .catch(function (error) {
@@ -124,7 +143,7 @@ export const CommentOnPost = (comments, postId, access_token) => {
 
   var config = {
     method: "post",
-    url: `https://logosabroad.com/api/public//api/comment/${postId}`,
+    url: `https://api.2geda.net//api/comment/${postId}`,
     headers: {
       Authorization: "Bearer " + access_token,
       "Content-Type": "application/json"
@@ -146,7 +165,7 @@ export const ShowComment = (commentId) => {
 
   const config = {
     method: "get",
-    url: `https://logosabroad.com/api/public//api/comment/${commentId}`,
+    url: `https://api.2geda.net//api/comment/${commentId}`,
     headers: {
       ...data.getHeaders()
     },
@@ -169,7 +188,7 @@ export const EditComment = (comments, commentId, access_token) => {
 
   var config = {
     method: "patch",
-    url: `https://logosabroad.com/api/public//api/comment/${commentId}`,
+    url: `https://api.2geda.net//api/comment/${commentId}`,
     headers: {
       Authorization: "Bearer " + access_token,
       "Content-Type": "application/json"
@@ -191,7 +210,7 @@ export const DeleteComment = (commentId, access_token) => {
 
   var config = {
     method: "delete",
-    url: `https://logosabroad.com/api/public//api/comment/${commentId}`,
+    url: `https://api.2geda.net//api/comment/${commentId}`,
     headers: {
       Authorization: "Bearer " + access_token,
       ...data.getHeaders()
@@ -213,7 +232,7 @@ export const DeletePost = (postId, access_token) => {
 
   var config = {
     method: "delete",
-    url: `https://logosabroad.com/api/public//api/post/${postId}`,
+    url: `https://api.2geda.net//api/post/${postId}`,
     headers: {
       Authorization: "Bearer " + access_token,
       ...data.getHeaders()
@@ -233,7 +252,7 @@ export const DeletePost = (postId, access_token) => {
 export const GetTotalComments = (postId) => {
   var config = {
     method: "get",
-    url: `https://logosabroad.com/api/public//api/commentstotal/${postId}`,
+    url: `https://api.2geda.net//api/commentstotal/${postId}`,
     headers: {}
   };
 
@@ -249,8 +268,50 @@ export const GetTotalComments = (postId) => {
 export const GetTotalLikes = (postId) => {
   var config = {
     method: "get",
-    url: `https://logosabroad.com/api/public//api/likestotal/${postId}`,
+    url: `https://api.2geda.net//api/likestotal/${postId}`,
     headers: {}
+  };
+
+  axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
+
+export const Repost = (message, postId, access_token) => {
+  var data = JSON.stringify({
+    message: message
+  });
+
+  var config = {
+    method: "post",
+    url: `http://api.2geda.net//api/repost/${postId}`,
+    headers: {
+      Authorization: "Bearer " + access_token,
+      "Content-Type": "application/json"
+    },
+    data: data
+  };
+
+  axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
+
+export const SavePost = (postId, access_token) => {
+  var config = {
+    method: "post",
+    url: `http://api.2geda.net//api/savepost/${postId}`,
+    headers: {
+      Authorization: "Bearer " + access_token
+    }
   };
 
   axios(config)
