@@ -45,21 +45,30 @@ export const Createpost = (
     data: data
   };
 
-  axios(config).then(function (response) {
-    setLoading(false);
-    console.log(JSON.stringify(response.data));
-    if (response.data.status === "error") {
-      Erroralert(response.data.message);
-    } else if (response.data.status === "success") {
-      Successalert(response.data.message);
-    }
-  });
-  navigate("/home").catch(function (error) {
-    console.log(error);
-  });
+  axios(config)
+    .then(function (response) {
+      setLoading(false);
+      console.log(JSON.stringify(response.data));
+      if (response.data.status === "error") {
+        Erroralert(response.data.message);
+      } else if (response.data.status === "success") {
+        Successalert(response.data.message);
+      }
+      navigate("/home");
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 };
 
-export const ShowPost = (postId, access_token, setUserPost) => {
+export const ShowPost = (
+  postId,
+  access_token,
+  setUserPost,
+  setPostComments,
+  setuserImages,
+  setUserVideos
+) => {
   const data = new FormData();
 
   const config = {
@@ -75,6 +84,9 @@ export const ShowPost = (postId, access_token, setUserPost) => {
     .then(function (response) {
       console.log(JSON.stringify(response.data));
       setUserPost(response.data);
+      setuserImages(response.data.image);
+      setUserVideos(response.data.video);
+      setPostComments(response.data.comments);
     })
     .catch(function (error) {
       console.log(error);
@@ -151,7 +163,8 @@ export const DislikePost = (postId, access_token, email) => {
     });
 };
 
-export const CommentOnPost = (comments, postId, access_token) => {
+export const CommentOnPost = (comments, postId, access_token, setLoading) => {
+  setLoading(true);
   var data = JSON.stringify({
     comments: comments
   });
@@ -168,7 +181,9 @@ export const CommentOnPost = (comments, postId, access_token) => {
 
   axios(config)
     .then(function (response) {
+      setLoading(false);
       console.log(JSON.stringify(response.data));
+      Successalert(response.data.message);
     })
     .catch(function (error) {
       console.log(error);

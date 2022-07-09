@@ -1,17 +1,46 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ShowPost } from "./Api/Feed";
+import { ShowPost, CommentOnPost } from "./Api/Feed";
+import ReactLoading from "react-loading";
+import { LikePost, DislikePost } from "./Api/Feed";
+import { Carousel } from "antd";
 import styled from "styled-components";
+import "react-slideshow-image/dist/styles.css";
+import { Fade } from "react-slideshow-image";
 
 export const PostPreview1 = ({}) => {
+  const [loading, setLoading] = React.useState(false);
   const [userPost, setUserPost] = React.useState([]);
+  const [userImages, setUserImages] = React.useState([]);
+  const [postComments, setPostComments] = React.useState([]);
+  const [comments, setComments] = React.useState("");
+  const [userVideos, setUserVideos] = React.useState([]);
+  const [content, setContent] = React.useState(false);
 
   const postId = localStorage.getItem("postId");
   const access_token = sessionStorage.getItem("access_token");
 
   React.useEffect(() => {
-    ShowPost(postId, access_token, setUserPost);
-  }, []);
+    ShowPost(
+      postId,
+      access_token,
+      setUserPost,
+      setPostComments,
+      setUserImages,
+      setUserVideos
+    );
+    console.log(userImages);
+    console.log(postComments);
+    if (userImages.img === null || userVideos.video === null) {
+      setContent(false);
+    } else {
+      setContent(true);
+    }
+  }, [userPost]);
+
+  const handleChangeInput = (e) => {
+    setComments(e.target.value);
+  };
 
   const navigate = useNavigate();
   return (
@@ -31,24 +60,70 @@ export const PostPreview1 = ({}) => {
         <Ellipse src={userPost.profile_pic} />
         <FlexColumn>
           <Element5>
-            <Text3>Dr. Salem Lawal</Text3>
-            <Text4>Pharmacist</Text4>
+            <Text3>{userPost.name}</Text3>
+            <Text4>@{userPost.poster_username}</Text4>
           </Element5>
           <Text5>Lagos, Nigeria</Text5>
         </FlexColumn>
       </FlexRow1>
-      <UnsplashsqPLlXc>
-        <Image5 src={"https://file.rendit.io/n/dYf1I6GtpLhgYR1nPs5b.svg"} />
-      </UnsplashsqPLlXc>
+      <Paragraph>
+        {userPost.post}
+        <br />
+        <br />
+        <Text11>www.ileifetech.com/freshmen</Text11>
+      </Paragraph>
+      {setContent ? (
+        <div
+          style={{
+            width: "100%",
+            margin: "0px auto 0px auto"
+          }}
+        >
+          <Fade>
+            {userImages.map((image, index) => {
+              return (
+                <div
+                  style={{
+                    margin: "0px auto 0px auto"
+                  }}
+                  key={index}
+                >
+                  <UnsplashsqPLlXc src={image.img} />
+                </div>
+              );
+            })}
+            {userVideos.map((video, index) => {
+              return (
+                <div
+                  style={{
+                    margin: "0px auto 0px 3%",
+                    alignSelf: "center"
+                  }}
+                  key={index}
+                >
+                  <video
+                    style={{
+                      width: "95%",
+                      margin: "0px auto 0px auto"
+                    }}
+                    src={video}
+                    controls
+                  />
+                </div>
+              );
+            })}
+          </Fade>
+        </div>
+      ) : null}
       <FlexRow2>
         <FlexRow3>
           <FlexColumn1>
             <Image6 src={"https://file.rendit.io/n/Cra5KuDS55BoNEosvUDQ.svg"} />
-            <Text6>3.2K</Text6>
+            <Text6>{userPost.likes}</Text6>
           </FlexColumn1>
           <FlexColumn2>
             <Image7 src={"https://file.rendit.io/n/HZCuVNrGfwZpTvLLBvtK.svg"} />
-            <Text7>115</Text7>
+            <Text7>{userPost.total_comments}</Text7>
           </FlexColumn2>
           <FlexColumn3>
             <Element6>
@@ -74,77 +149,54 @@ export const PostPreview1 = ({}) => {
         {/*<Text10>1hr ago</Text10>*/}
       </FlexRow2>
       <Line4 src={"https://file.rendit.io/n/csyQ97WPwwHSSwapigB5.svg"} />
-      <Paragraph>
-        This is the Opportunity to Join the World Leading Tech Professionals in
-        2022. All you{"  "}need do is to register with the link below
-        <br />
-        <br />
-        <Text11>www.ileifetech.com/freshmen</Text11>
-      </Paragraph>
       <PurpleHeartText>Comments</PurpleHeartText>
-      <FlexColumn4 margin={"0px 0px 9.8px 10px"}>
-        <FlexRow4>
-          <Ellipse1 src={"https://file.rendit.io/n/ZACOOWJKPzudtGDclFy1.png"} />
-          <FlexColumn5>
-            <Text12>Becca Touches</Text12>
-            <Text13>Travels and Tourism</Text13>
-            <AbujaNigeria>Abuja,{"  "}Nigeria</AbujaNigeria>
-          </FlexColumn5>
-        </FlexRow4>
-        <Paragraph1>
-          I enrolled last year and it was an awesome experience
-        </Paragraph1>
-      </FlexColumn4>
-      <Line src={"https://file.rendit.io/n/5kOEUCmfaDYk8mWEpLzJ.svg"} />
-      <FlexColumn4 margin={"0px 0px 9.8px 10px"}>
-        <FlexRow4>
-          <Ellipse1 src={"https://file.rendit.io/n/dxvKq2ALfIBm7mOnfCB9.png"} />
-          <FlexColumn5>
-            <Text12>Becca Touches</Text12>
-            <Text13>Travels and Tourism</Text13>
-            <AbujaNigeria>Abuja,{"  "}Nigeria</AbujaNigeria>
-          </FlexColumn5>
-        </FlexRow4>
-        <Paragraph1>
-          I enrolled last year and it was an awesome experience
-        </Paragraph1>
-      </FlexColumn4>
-      <Line1 src={"https://file.rendit.io/n/1dsdMCyhrPLaJdjC1rma.svg"} />
-      <FlexColumn4 margin={"0px 0px 9.8px 10px"}>
-        <FlexRow4>
-          <Ellipse1 src={"https://file.rendit.io/n/dxvKq2ALfIBm7mOnfCB9.png"} />
-          <FlexColumn5>
-            <Text12>Becca Touches</Text12>
-            <Text13>Travels and Tourism</Text13>
-            <AbujaNigeria>Abuja,{"  "}Nigeria</AbujaNigeria>
-          </FlexColumn5>
-        </FlexRow4>
-        <Paragraph1>
-          I enrolled last year and it was an awesome experience
-        </Paragraph1>
-      </FlexColumn4>
-      <Line1 src={"https://file.rendit.io/n/1dsdMCyhrPLaJdjC1rma.svg"} />
-      <FlexColumn4 margin={"0px 0px 9.8px 10px"}>
-        <FlexRow4>
-          <Ellipse1 src={"https://file.rendit.io/n/dxvKq2ALfIBm7mOnfCB9.png"} />
-          <FlexColumn5>
-            <Text12>Becca Touches</Text12>
-            <Text13>Travels and Tourism</Text13>
-            <AbujaNigeria>Abuja,{"  "}Nigeria</AbujaNigeria>
-          </FlexColumn5>
-        </FlexRow4>
-        <Paragraph1>
-          I enrolled last year and it was an awesome experience
-        </Paragraph1>
-      </FlexColumn4>
-      <Line3 src={"https://file.rendit.io/n/1dsdMCyhrPLaJdjC1rma.svg"} />
+      {postComments.map((comment, index) => {
+        return (
+          <>
+            <FlexColumn4 key={index} margin={"0px 0px 9.8px 10px"}>
+              <FlexRow4>
+                <Ellipse1 src={comment.profile_pic} />
+                <FlexColumn5>
+                  <Text12>{comment.name}</Text12>
+                  <Text13>{comment.commenter_username}</Text13>
+                  <AbujaNigeria>Abuja,{"  "}Nigeria</AbujaNigeria>
+                </FlexColumn5>
+              </FlexRow4>
+              <Paragraph1>{comment.comment}</Paragraph1>
+            </FlexColumn4>
+            <Line src={"https://file.rendit.io/n/5kOEUCmfaDYk8mWEpLzJ.svg"} />
+          </>
+        );
+      })}
       <Text20>Next</Text20>
       <FlexColumn12>
         <Text21>Comment</Text21>
-        <Element8 placeholder="Your comment goes here" />
-        <FlexRow9>
-          <Text23>Post</Text23>
-        </FlexRow9>
+        <Element8
+          type="text"
+          name="comments"
+          value={comments}
+          onChange={handleChangeInput}
+          placeholder="Your comment goes here"
+        />
+        {!loading ? (
+          <FlexRow9
+            onClick={() => {
+              CommentOnPost(comments, userPost.id, access_token, setLoading);
+            }}
+          >
+            <Text23>Post</Text23>
+          </FlexRow9>
+        ) : (
+          <FlexRow9>
+            <ReactLoading
+              type="cylon"
+              color="#fff"
+              height={20}
+              width={20}
+              marginTop={20}
+            />
+          </FlexRow9>
+        )}
       </FlexColumn12>
     </PostPreviewRoot>
   );
@@ -208,6 +260,7 @@ const FlexRow1 = styled.div`
 const Ellipse = styled.img`
   width: 50px;
   height: 50px;
+  border-radius: 50%;
 `;
 const FlexColumn = styled.div`
   width: 180px;
@@ -250,17 +303,16 @@ const Text5 = styled.div`
   font-weight: 300;
   margin: 0px 0px 0px 1px;
 `;
-const UnsplashsqPLlXc = styled.div`
+const UnsplashsqPLlXc = styled.img`
   width: 100%;
-  background-image: url("https://file.rendit.io/n/6XvDmmCgXg6JgEw391BO.png");
   background-size: cover;
   align-self: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 77px 0px 106.24px 0px;
-  margin: 0px 0px 17px 0px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px auto 0px auto;
 `;
 const Image5 = styled.img`
   width: 41px;
@@ -274,7 +326,7 @@ const FlexRow2 = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 0px 19px;
-  margin: 0px 0px 16.1px 0px;
+  margin: 10px 0px 16.1px 0px;
 `;
 const FlexRow3 = styled.div`
   width: 184px;

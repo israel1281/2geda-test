@@ -4,6 +4,8 @@ import FormData from "form-data";
 import { LikePost, DislikePost } from "./Api/Feed";
 import { notification, Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
+import "react-slideshow-image/dist/styles.css";
+import { Fade } from "react-slideshow-image";
 import axios from "axios";
 export const Home3 = ({}) => {
   const initialState = {
@@ -26,8 +28,17 @@ export const Home3 = ({}) => {
   const [sidebarWidth, setSidebarWidth] = useState("380px");
   const [sidebarWidth2, setSidebarWidth2] = useState("0px");
   const [commentData, setCommentData] = useState(initialState);
+  const [userImages, setUserImages] = React.useState([]);
+  const [userVideos, setUserVideos] = React.useState([]);
 
   const { comments } = commentData;
+
+  React.useEffect(() => {
+    for (let i = 0; i < feedsArray.length; i++) {
+      setUserImages(feedsArray[i].video);
+      console.log(userImages);
+    }
+  }, [userImages]);
 
   const navigate = useNavigate();
 
@@ -213,7 +224,47 @@ export const Home3 = ({}) => {
                 <br />
                 <br />
                 <Text12>www.ileifetech.com/freshmen</Text12>
-                {/*<UnsplashsqPLlXc src={feed.image} />*/}
+                {/*  <div
+                  style={{
+                    width: "100%",
+                    margin: "0px auto 0px auto"
+                  }}
+                >
+                  <Fade>
+                    {userImages.map((img, index) => {
+                      return (
+                        <div
+                          style={{
+                            margin: "0px auto 0px auto"
+                          }}
+                          key={index}
+                        >
+                          <UnsplashsqPLlXc src={img.img} />
+                        </div>
+                      );
+                    })}
+                    {userVideos.map((vid, index) => {
+                      return (
+                        <div
+                          style={{
+                            margin: "0px auto 0px 3%",
+                            alignSelf: "center"
+                          }}
+                          key={index}
+                        >
+                          <video
+                            style={{
+                              width: "95%",
+                              margin: "0px auto 0px auto"
+                            }}
+                            src={vid}
+                            controls
+                          />
+                        </div>
+                      );
+                    })}
+                  </Fade>
+                  </div>*/}
               </Paragraph>
               <Element21>
                 <Image5
