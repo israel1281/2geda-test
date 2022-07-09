@@ -348,7 +348,12 @@ export const Home3 = ({}) => {
           />
           <Text23>Outlet</Text23>
         </Marketplace>
-        <Marketplace margin={"0px 28px 0px 0px"}>
+        <Marketplace
+          onClick={() => {
+            navigate("/profile");
+          }}
+          margin={"0px 28px 0px 0px"}
+        >
           <Storefront
             src={"https://file.rendit.io/n/1LfPkywGENZrPSIUbsCq.svg"}
           />

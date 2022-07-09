@@ -4,23 +4,16 @@ export const UserProfile1 = ({}) => {
   return (
     <UserProfileRoot>
       <WhiteFlexColumn>
-        <StatusBar>
-          <Element6>
-            <Image1 src={""} />
-            <Text1>12:22</Text1>
-          </Element6>
-          <Image2 src={""} />
-          <Image3 src={""} />
-          <Image4 src={""} />
-        </StatusBar>
         <FlexRow padding={"0px 4px"}>
           <Back src={""} />
           <Text2>Profile</Text2>
-          <DotsThreeCircle src={""} />
+          <DotsThreeCircle
+            src={"https://file.rendit.io/n/O34P177UWMfLbrdqYYWM.svg"}
+          />
         </FlexRow>
       </WhiteFlexColumn>
       <Ellipse>
-        <Image5 src={""} />
+        <Image5 src={"https://file.rendit.io/n/vKWkiw9W1VsrL0QSxAnw.png"} />
       </Ellipse>
       <Text3>Ruth obe</Text3>
       <Text4>Professional Tech Consultant</Text4>
@@ -49,66 +42,11 @@ export const UserProfile1 = ({}) => {
       <Element8>
         <Text7>Posts (560)</Text7>
         <Text8>Outlet (0)</Text8>
-        <Line src={""} />
-        <Line1 src={""} />
-        <Line2 src={""} />
+        <Line src={"https://file.rendit.io/n/b5S9s9moTzKULFnl3Ig9.svg"} />
+        <Line1 src={"https://file.rendit.io/n/b5S9s9moTzKULFnl3Ig9.svg"} />
+        <Line2 src={"https://file.rendit.io/n/qBaFQIcSWMumNCW3uOs2.svg"} />
       </Element8>
-      <FlexColumn margin={"0px 7px 37px 0px"}>
-        <WhiteFlexColumn1>
-          <FlexRow1>
-            <Ellipse2>
-              <Verified src={""} />
-            </Ellipse2>
-            <FlexColumn1>
-              <Element9>
-                <Text9>Dr. Salem Lawal</Text9>
-                <Text10>Pharmacist</Text10>
-              </Element9>
-              <Text11>Lagos, Nigeria</Text11>
-            </FlexColumn1>
-            <Text12>1hr ago</Text12>
-          </FlexRow1>
-          <Line3 src={""} />
-          <Paragraph>
-            This is the Opportunity to Join the World Leading Tech Professionals
-            in 2022. All you{"  "}need do is to register with the link below
-            <br />
-            <br />
-            <Text13>www.ileifetech.com/freshmen</Text13>
-          </Paragraph>
-          <UnsplashsqPLlXc>
-            <Ellipse1>
-              <Polygon src={""} />
-            </Ellipse1>
-          </UnsplashsqPLlXc>
-          <FlexRow2>
-            <Image6 src={""} />
-            <Image7 src={""} />
-            <Image8 src={""} />
-            <Image9 src={""} />
-            <Options src={""} />
-          </FlexRow2>
-          <FlexRow padding={"0px 2px"}>
-            <Text14 margin={"0px 36px 0px 0px"}>3.2K</Text14>
-            <Text15>115</Text15>
-            <Text16>5</Text16>
-            <Text14 margin={"0"}>1.3K</Text14>
-          </FlexRow>
-        </WhiteFlexColumn1>
-        <WhiteFlexColumn2>
-          <Text18>Comment</Text18>
-          <Element10>
-            <Text19>Your comment goes here</Text19>
-            <FlexRow4>
-              <FlexRow5>
-                <Text20>Post</Text20>
-              </FlexRow5>
-            </FlexRow4>
-          </Element10>
-          <Text21>See all comments</Text21>
-        </WhiteFlexColumn2>
-      </FlexColumn>
-      <FlexColumn margin={"0px 3px 0px 0px"}>
+      <FlexColumn margin={"0px 0px 37px 0px"}>
         <WhiteFlexColumn1>
           <FlexRow1>
             <Ellipse2>
@@ -167,8 +105,8 @@ export const UserProfile1 = ({}) => {
   );
 };
 const UserProfileRoot = styled.div`
-  width: 375px;
-  height: 1868px;
+  width: 100%;
+  height: 100%;
   background-color: #ffffff;
   display: flex;
   overflow: hidden;
@@ -179,6 +117,7 @@ const UserProfileRoot = styled.div`
 `;
 const WhiteFlexColumn = styled.div`
   height: 112px;
+  width: 100%;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -187,50 +126,6 @@ const WhiteFlexColumn = styled.div`
   align-items: center;
   padding: 5px 18px 5px 19px;
   margin: 0px 0px 7px 0px;
-`;
-const StatusBar = styled.div`
-  width: 338px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-`;
-const Element6 = styled.div`
-  align-self: stretch;
-  width: 50px;
-  height: 15px;
-  position: relative;
-  flex-grow: 1;
-  margin: 0px 229px 0px 0px;
-`;
-const Image1 = styled.img`
-  width: 12px;
-  height: 10px;
-  position: absolute;
-  top: 2px;
-  left: 38px;
-`;
-const Text1 = styled.div`
-  width: 45px;
-  font-size: 13px;
-  font-family: Roboto;
-  font-weight: 700;
-  color: #282828;
-  position: absolute;
-`;
-const Image2 = styled.img`
-  width: 14px;
-  height: 12px;
-  margin: 0px 5px 0px 0px;
-`;
-const Image3 = styled.img`
-  width: 16px;
-  height: 11px;
-  margin: 0px 5px 0px 0px;
-`;
-const Image4 = styled.img`
-  width: 19px;
-  height: 10px;
 `;
 const Back = styled.img`
   width: 47px;
@@ -275,8 +170,7 @@ const Text4 = styled.div`
   font-family: Ubuntu;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.8);
-  align-self: flex-end;
-  margin: 0px 99px 4px 0px;
+  margin: 0px 0px 4px 0px;
 `;
 const Text5 = styled.div`
   font-size: 12px;
@@ -296,15 +190,17 @@ const PurpleHeartFlexRow = styled.div`
   margin: 0px 0px 18px 0px;
 `;
 const Element7 = styled.div`
-  width: 274px;
-  height: 37px;
-  position: relative;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  margin: 0px 0px 25px 0px;
+  margin: 0px 0px 5px 0px;
 `;
 const Text6 = styled.div`
   text-align: center;
   display: flex;
+  align-items: center;
   font-size: 10px;
   font-family: Ubuntu;
   font-weight: 500;
@@ -314,7 +210,6 @@ const Text6 = styled.div`
   border-style: solid;
   width: 130px;
   height: 11px;
-  position: absolute;
   top: -1px;
   left: -1px;
   flex-direction: row;
@@ -325,6 +220,7 @@ const Text6 = styled.div`
 const BlackText = styled.div`
   text-align: center;
   display: flex;
+  align-items: center;
   font-size: 10px;
   font-family: Ubuntu;
   font-weight: 500;
@@ -332,7 +228,6 @@ const BlackText = styled.div`
   width: 132px;
   height: 11px;
   background-color: #282828;
-  position: absolute;
   left: 142px;
   flex-direction: row;
   justify-content: center;
@@ -340,18 +235,18 @@ const BlackText = styled.div`
   padding: 13px 0px;
 `;
 const Element8 = styled.div`
-  width: 322px;
+  width: 90%;
   height: 41px;
-  align-self: flex-start;
-  position: relative;
-  margin: 0px 0px 4px 25px;
+  margin: 10px 0px 4px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 `;
 const Text7 = styled.div`
   font-size: 14px;
   font-family: Ubuntu;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.8);
-  position: absolute;
   top: 14px;
   left: 35px;
 `;
@@ -360,7 +255,6 @@ const Text8 = styled.div`
   font-family: Ubuntu;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.6);
-  position: absolute;
   top: 13px;
   left: 205px;
 `;
@@ -385,9 +279,10 @@ const Line2 = styled.img`
   left: 164.5px;
 `;
 const FlexRow = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
   padding: ${(props) => props.padding};
 `;
@@ -406,6 +301,7 @@ const Posts = styled.div`
   display: contents;
 `;
 const FlexColumn = styled.div`
+  width: 100%;
   display: flex;
   align-self: flex-end;
   flex-direction: column;

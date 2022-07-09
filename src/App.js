@@ -25,6 +25,7 @@ export default function App() {
         <Route path="/outlet" element={<Outlet2 />} />
         <Route path="/People2" element={<People2 />} />
         <Route path="/home" element={<Home3 />} />
+        <Route path="/profile" element={<UserProfile1 />} />
         <Route path="/forget-password" element={<ForgetPassword1 />} />
         <Route path="/profile-details" element={<ProfileDetails2 />} />
         <Route path="/upload" element={<Upload2 />} />

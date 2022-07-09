@@ -5,17 +5,6 @@ export const Profile4 = ({}) => {
     <ProfileRoot>
       <Element8>
         <WhiteFlexColumn>
-          <StatusBar>
-            <Element9>
-              <Image1
-                src={"https://file.rendit.io/n/2XUIjGInG4jh8t71zQ6h.svg"}
-              />
-              <Text1>12:22</Text1>
-            </Element9>
-            <Image2 src={"https://file.rendit.io/n/jK0vMQtGCuWd7gk4qrbG.svg"} />
-            <Image3 src={"https://file.rendit.io/n/5lKa3Ef4LDUzGL9DFeHJ.svg"} />
-            <Image4 src={"https://file.rendit.io/n/T4AvCJ0IoLW1SM9hausZ.svg"} />
-          </StatusBar>
           <FlexRow>
             <Text2>Profile</Text2>
             <DotsThreeCircle
@@ -170,14 +159,14 @@ export const Profile4 = ({}) => {
               <FlexRow8>
                 {[
                   {
-                    src: "https://file.rendit.io/n/T200zPJP7WwWeKn6OFkH.svg",
+                    src: "https://file.rendit.io/n/T200zPJP7WwWeKn6OFkH.svg"
                   },
                   {
-                    src: "https://file.rendit.io/n/T200zPJP7WwWeKn6OFkH.svg",
+                    src: "https://file.rendit.io/n/T200zPJP7WwWeKn6OFkH.svg"
                   },
                   {
-                    src: "https://file.rendit.io/n/T200zPJP7WwWeKn6OFkH.svg",
-                  },
+                    src: "https://file.rendit.io/n/T200zPJP7WwWeKn6OFkH.svg"
+                  }
                 ].map((data) => (
                   <Image10 src={data.src} />
                 ))}
@@ -356,11 +345,12 @@ export const Profile4 = ({}) => {
   );
 };
 const ProfileRoot = styled.div`
-  width: 375px;
-  height: 2218px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow-y: auto;
   background-color: #ffffff;
   display: flex;
-  overflow: hidden;
   flex-direction: column;
   justify-content: flex-start;
   margin: auto;
