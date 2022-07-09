@@ -59,15 +59,14 @@ export const Createpost = (
   });
 };
 
-export const ShowPost = (postId, access_token) => {
+export const ShowPost = (postId, access_token, setUserPost) => {
   const data = new FormData();
 
   const config = {
     method: "get",
     url: `https://api.2geda.net//api/post/${postId}`,
     headers: {
-      Authorization: "Bearer " + access_token,
-      ...data.getHeaders()
+      Authorization: "Bearer " + access_token
     },
     data: data
   };
@@ -75,6 +74,7 @@ export const ShowPost = (postId, access_token) => {
   axios(config)
     .then(function (response) {
       console.log(JSON.stringify(response.data));
+      setUserPost(response.data);
     })
     .catch(function (error) {
       console.log(error);

@@ -217,6 +217,10 @@ export const Home3 = ({}) => {
               </Paragraph>
               <Element21>
                 <Image5
+                  onClick={() => {
+                    localStorage.setItem("postId", feed.id);
+                    navigate("/post-preview");
+                  }}
                   src={"https://file.rendit.io/n/nIkMGORp6lv3mxl5Iggr.svg"}
                 />
                 <Image6
@@ -261,7 +265,14 @@ export const Home3 = ({}) => {
                   <Text20>Post</Text20>
                 </FlexRow5>
               </Element22>
-              <Text21>See all comments</Text21>
+              <Text21
+                onClick={() => {
+                  localStorage.setItem("postId", feed.id);
+                  navigate("/post-preview");
+                }}
+              >
+                See all comments
+              </Text21>
             </WhiteFlexColumn2>
           </FlexColumn>
         ))}

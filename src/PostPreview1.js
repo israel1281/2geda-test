@@ -1,15 +1,34 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { ShowPost } from "./Api/Feed";
 import styled from "styled-components";
+
 export const PostPreview1 = ({}) => {
+  const [userPost, setUserPost] = React.useState([]);
+
+  const postId = localStorage.getItem("postId");
+  const access_token = sessionStorage.getItem("access_token");
+
+  React.useEffect(() => {
+    ShowPost(postId, access_token, setUserPost);
+  }, []);
+
+  const navigate = useNavigate();
   return (
     <PostPreviewRoot>
       <WhiteFlexRow></WhiteFlexRow>
       <FlexRow>
         <Text2>Post</Text2>
-        <X src={"https://file.rendit.io/n/FbRyDn2ZAz7fZrm5v7SS.svg"} />
+        <X
+          onClick={() => {
+            localStorage.removeItem("postId");
+            navigate("/home");
+          }}
+          src={"https://file.rendit.io/n/FbRyDn2ZAz7fZrm5v7SS.svg"}
+        />
       </FlexRow>
       <FlexRow1>
-        <Ellipse src={"https://file.rendit.io/n/RbMvUj7chMJLddCRTJaZ.png"} />
+        <Ellipse src={userPost.profile_pic} />
         <FlexColumn>
           <Element5>
             <Text3>Dr. Salem Lawal</Text3>
@@ -52,7 +71,7 @@ export const PostPreview1 = ({}) => {
             </Element7>
           </FlexColumn3>
         </FlexRow3>
-        <Text10>1hr ago</Text10>
+        {/*<Text10>1hr ago</Text10>*/}
       </FlexRow2>
       <Line4 src={"https://file.rendit.io/n/csyQ97WPwwHSSwapigB5.svg"} />
       <Paragraph>
@@ -63,7 +82,7 @@ export const PostPreview1 = ({}) => {
         <Text11>www.ileifetech.com/freshmen</Text11>
       </Paragraph>
       <PurpleHeartText>Comments</PurpleHeartText>
-      <FlexColumn4 margin={"0px 0px 9.8px 27px"}>
+      <FlexColumn4 margin={"0px 0px 9.8px 10px"}>
         <FlexRow4>
           <Ellipse1 src={"https://file.rendit.io/n/ZACOOWJKPzudtGDclFy1.png"} />
           <FlexColumn5>
@@ -77,7 +96,7 @@ export const PostPreview1 = ({}) => {
         </Paragraph1>
       </FlexColumn4>
       <Line src={"https://file.rendit.io/n/5kOEUCmfaDYk8mWEpLzJ.svg"} />
-      <FlexColumn4 margin={"0px 0px 9.8px 28px"}>
+      <FlexColumn4 margin={"0px 0px 9.8px 10px"}>
         <FlexRow4>
           <Ellipse1 src={"https://file.rendit.io/n/dxvKq2ALfIBm7mOnfCB9.png"} />
           <FlexColumn5>
@@ -91,7 +110,7 @@ export const PostPreview1 = ({}) => {
         </Paragraph1>
       </FlexColumn4>
       <Line1 src={"https://file.rendit.io/n/1dsdMCyhrPLaJdjC1rma.svg"} />
-      <FlexColumn4 margin={"0px 0px 9.8px 28px"}>
+      <FlexColumn4 margin={"0px 0px 9.8px 10px"}>
         <FlexRow4>
           <Ellipse1 src={"https://file.rendit.io/n/dxvKq2ALfIBm7mOnfCB9.png"} />
           <FlexColumn5>
@@ -105,7 +124,7 @@ export const PostPreview1 = ({}) => {
         </Paragraph1>
       </FlexColumn4>
       <Line1 src={"https://file.rendit.io/n/1dsdMCyhrPLaJdjC1rma.svg"} />
-      <FlexColumn4 margin={"0px 0px 9.8px 28px"}>
+      <FlexColumn4 margin={"0px 0px 9.8px 10px"}>
         <FlexRow4>
           <Ellipse1 src={"https://file.rendit.io/n/dxvKq2ALfIBm7mOnfCB9.png"} />
           <FlexColumn5>
@@ -122,15 +141,10 @@ export const PostPreview1 = ({}) => {
       <Text20>Next</Text20>
       <FlexColumn12>
         <Text21>Comment</Text21>
-        <Element8>
-          <Text22>Your comment goes here</Text22>
-          <FlexRow8>
-            <FlexRow9>
-              <Text23>Post</Text23>
-            </FlexRow9>
-          </FlexRow8>
-        </Element8>
-        <Text24>See all comments</Text24>
+        <Element8 placeholder="Your comment goes here" />
+        <FlexRow9>
+          <Text23>Post</Text23>
+        </FlexRow9>
       </FlexColumn12>
     </PostPreviewRoot>
   );
@@ -147,68 +161,27 @@ const PostPreviewRoot = styled.div`
   margin: auto;
   align-items: flex-start;
   overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
 `;
 const WhiteFlexRow = styled.div`
-  width: 375px;
+  width: 100%;
   background-color: #ffffff;
   display: flex;
   align-self: center;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 15px 0px 13px 0px;
   margin: 0px 0px 24px 0px;
 `;
-const StatusBar = styled.div`
-  width: 338px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-`;
-const Element4 = styled.div`
-  align-self: stretch;
-  width: 50px;
-  height: 15px;
-  position: relative;
-  flex-grow: 1;
-  margin: 0px 229px 0px 0px;
-`;
-const Image1 = styled.img`
-  width: 12px;
-  height: 10px;
-  position: absolute;
-  top: 2px;
-  left: 38px;
-`;
-const Text1 = styled.div`
-  width: 45px;
-  font-size: 13px;
-  font-family: Roboto;
-  font-weight: 700;
-  color: #282828;
-  position: absolute;
-`;
-const Image2 = styled.img`
-  width: 14px;
-  height: 12px;
-  margin: 0px 5px 0px 0px;
-`;
-const Image3 = styled.img`
-  width: 16px;
-  height: 11px;
-  margin: 0px 5px 0px 0px;
-`;
-const Image4 = styled.img`
-  width: 19px;
-  height: 10px;
-`;
 const FlexRow = styled.div`
-  align-self: stretch;
+  width: 100%;
   height: 38px;
   display: flex;
   flex-direction: row;
-  gap: 246px;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 0px 27px 0px 20px;
   margin: 0px 0px 6px 0px;
@@ -225,10 +198,10 @@ const X = styled.img`
   align-self: flex-end;
 `;
 const FlexRow1 = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   gap: 8px;
-  justify-content: center;
   align-items: center;
   margin: 0px 0px 16px 20px;
 `;
@@ -278,7 +251,7 @@ const Text5 = styled.div`
   margin: 0px 0px 0px 1px;
 `;
 const UnsplashsqPLlXc = styled.div`
-  width: 375px;
+  width: 100%;
   background-image: url("https://file.rendit.io/n/6XvDmmCgXg6JgEw391BO.png");
   background-size: cover;
   align-self: center;
@@ -451,7 +424,7 @@ const PurpleHeartText = styled.div`
   color: #ffffff;
   align-self: center;
   width: 134px;
-  height: 11px;
+  height: 30px;
   background-color: #4e0ca2;
   flex-direction: row;
   justify-content: center;
@@ -479,17 +452,18 @@ const Text20 = styled.div`
   margin: 0px 23px 24px 0px;
 `;
 const FlexColumn12 = styled.div`
+  width: 90%;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
-  height: 76px;
+  height: 140px;
   display: flex;
   align-self: flex-end;
   flex-direction: column;
   align-items: flex-start;
   border-radius: 15px;
-  padding: 9px 22px 7px 10px;
-  margin: 0px 6px 0px 0px;
+  padding: 9px 10px 100px 10px;
+  margin: 0px auto 10% auto;
 `;
 const Text21 = styled.div`
   width: 49px;
@@ -500,12 +474,12 @@ const Text21 = styled.div`
   color: rgba(0, 0, 0, 0.8);
   margin: 0px 0px 4px 3px;
 `;
-const Element8 = styled.div`
-  align-self: stretch;
-  height: 38px;
-  position: relative;
-  min-width: 326px;
-  margin: 0px 0px 10px 0px;
+const Element8 = styled.input`
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  margin: 0px auto 10px auto;
+  border-radius: 10px;
 `;
 const Text22 = styled.div`
   width: 114px;
@@ -527,15 +501,18 @@ const FlexRow8 = styled.div`
   justify-content: flex-end;
   align-items: center;
 `;
-const FlexRow9 = styled.div`
-  width: 76px;
+const FlexRow9 = styled.button`
+  width: 30%;
   background-image: url("https://file.rendit.io/n/LD1SZKHm878BKZB3YYOI.svg");
   background-size: cover;
   display: flex;
+  border-radius: 10px;
+  border-width: 0px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 12px 0px 11px 0px;
+  padding: 10px 10px 18px 10px;
+  margin: 2px;
 `;
 const Text23 = styled.div`
   width: 27px;
@@ -556,7 +533,7 @@ const Text24 = styled.div`
   margin: 0px 4px 0px 0px;
 `;
 const FlexColumn4 = styled.div`
-  width: 274px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -611,9 +588,10 @@ const AbujaNigeria = styled.div`
 `;
 const Paragraph1 = styled.div`
   font-size: 10px;
+  width: 90%;
   font-family: Ubuntu;
   font-weight: 300;
-  align-self: flex-end;
+  margin: 0px 0px 0px 10%;
 `;
 const Line1 = styled.img`
   width: 323px;
