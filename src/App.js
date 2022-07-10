@@ -11,6 +11,8 @@ import { ForgetPassword1 } from "./ForgetPassword1";
 import { People2 } from "./People2";
 import { Upload2 } from "./Upload2";
 import { PostPreview1 } from "./PostPreview1";
+import { Profile4 } from "./Profile4"
+import { Settings } from "./Settings"
 
 export default function App() {
   document.body.style.backgroundColor = "#e5e5e5";
@@ -20,11 +22,13 @@ export default function App() {
       <Routes>
         <Route index element={<Onboarding1 />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="/signin" element={<SignIn2 />} />
         <Route path="/verify" element={<Verify2 />} />
         <Route path="/outlet" element={<Outlet2 />} />
         <Route path="/People2" element={<People2 />} />
         <Route path="/home" element={<Home3 />} />
+        <Route path="/user-profile" element={<Profile4 />} />
         <Route path="/profile" element={<UserProfile1 />} />
         <Route path="/forget-password" element={<ForgetPassword1 />} />
         <Route path="/profile-details" element={<ProfileDetails2 />} />

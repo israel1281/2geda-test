@@ -5,6 +5,7 @@ import { LikePost, DislikePost } from "./Api/Feed";
 import { notification, Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
 import "react-slideshow-image/dist/styles.css";
+import { Modal } from "antd";
 import { Fade } from "react-slideshow-image";
 import axios from "axios";
 export const Home3 = ({}) => {
@@ -30,6 +31,7 @@ export const Home3 = ({}) => {
   const [commentData, setCommentData] = useState(initialState);
   const [userImages, setUserImages] = React.useState([]);
   const [userVideos, setUserVideos] = React.useState([]);
+  const [visible, setVisible] = useState(false);
 
   const { comments } = commentData;
 
@@ -206,7 +208,13 @@ export const Home3 = ({}) => {
           <FlexColumn key={index}>
             <WhiteFlexColumn1>
               <FlexRow2>
-                <Ellipse1 src={feed.profile_pic} alt="avatar" />
+                <Ellipse1
+                  onClick={() => {
+                    navigate("/user-profile");
+                  }}
+                  src={feed.profile_pic}
+                  alt="avatar"
+                />
                 <FlexColumn1>
                   <Element20>
                     <Text8>{feed.name}</Text8>
@@ -296,8 +304,31 @@ export const Home3 = ({}) => {
                   src={"https://file.rendit.io/n/XSbHmU2wfjJdNDDFALpn.svg"}
                 />
                 <Options
+                  onClick={() => setVisible(true)}
                   src={"https://file.rendit.io/n/3dp5Rw3BIST3qSWR0TEt.svg"}
                 />
+                <Modal
+                  title=""
+                  centered
+                  visible={visible}
+                  onCancel={() => setVisible(false)}
+                  width={200}
+                  footer={[<div></div>]}
+                  style={{
+                    borderRadius: "10px"
+                  }}
+                >
+                  <p>Report Abuse</p>
+                  <p>See more of this</p>
+                  <p>i hate this</p>
+                  <p
+                    style={{
+                      color: "#8b1212"
+                    }}
+                  >
+                    Block User
+                  </p>
+                </Modal>
               </Element21>
               <FlexRow3>
                 <Text14 margin={"0px 36px 0px 0px"}>

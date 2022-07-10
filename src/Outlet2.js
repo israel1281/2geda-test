@@ -4,15 +4,6 @@ export const Outlet2 = ({}) => {
   return (
     <OutletRoot>
       <WhiteFlexColumn>
-        <StatusBar>
-          <Element32>
-            <Image1 src={"https://file.rendit.io/n/FWs7UU9SPhWLqk4tHqbO.svg"} />
-            <Text1>12:22</Text1>
-          </Element32>
-          <Image2 src={"https://file.rendit.io/n/C7jGSYGmuWfmaiMOJDjE.svg"} />
-          <Image3 src={"https://file.rendit.io/n/lQantLrSDss8BnsBsnra.svg"} />
-          <Image4 src={"https://file.rendit.io/n/GqzZrvBLKuoYsTQfr1rZ.svg"} />
-        </StatusBar>
         <FlexRow>
           <Back src={"https://file.rendit.io/n/aOnamrfdtRvqEw78zAyY.svg"} />
           <Text2>Outlet</Text2>
@@ -840,8 +831,9 @@ export const Outlet2 = ({}) => {
   );
 };
 const OutletRoot = styled.div`
-  width: 375px;
-  height: 1868px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
   background-color: #ffffff;
   display: flex;
   overflow: hidden;
@@ -849,8 +841,13 @@ const OutletRoot = styled.div`
   justify-content: flex-start;
   margin: auto;
   align-items: flex-end;
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
 `;
 const WhiteFlexColumn = styled.div`
+width: 100%;
   height: 174px;
   background-color: #ffffff;
   display: flex;

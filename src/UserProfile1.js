@@ -1,13 +1,24 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
 export const UserProfile1 = ({}) => {
+  const navigate = useNavigate();
   return (
     <UserProfileRoot>
       <WhiteFlexColumn>
         <FlexRow padding={"0px 4px"}>
-          <Back src={""} />
+          <Back
+            onClick={() => {
+              navigate("/home");
+            }}
+            src={"https://file.rendit.io/n/PFPi6YzDnGX6Xf7WsLuO.svg"}
+          />
           <Text2>Profile</Text2>
           <DotsThreeCircle
+            onClick={() => {
+              navigate("/settings");
+            }}
             src={"https://file.rendit.io/n/O34P177UWMfLbrdqYYWM.svg"}
           />
         </FlexRow>
@@ -35,10 +46,6 @@ export const UserProfile1 = ({}) => {
           <Posts>23k</Posts>
         </Posts1>
       </PurpleHeartFlexRow>
-      <Element7>
-        <Text6>Following</Text6>
-        <BlackText>Direct message</BlackText>
-      </Element7>
       <Element8>
         <Text7>Posts (560)</Text7>
         <Text8>Outlet (0)</Text8>
@@ -46,7 +53,7 @@ export const UserProfile1 = ({}) => {
         <Line1 src={"https://file.rendit.io/n/b5S9s9moTzKULFnl3Ig9.svg"} />
         <Line2 src={"https://file.rendit.io/n/qBaFQIcSWMumNCW3uOs2.svg"} />
       </Element8>
-      <FlexColumn margin={"0px 0px 37px 0px"}>
+      <FlexColumn margin={"0px auto 37px auto"}>
         <WhiteFlexColumn1>
           <FlexRow1>
             <Ellipse2>
@@ -75,30 +82,26 @@ export const UserProfile1 = ({}) => {
             </Ellipse1>
           </UnsplashsqPLlXc>
           <FlexRow2>
-            <Image6 src={""} />
-            <Image7 src={""} />
-            <Image8 src={""} />
-            <Image9 src={""} />
-            <Options src={""} />
+            <Image6 src={"https://file.rendit.io/n/mJbaHBSx30Pa8ezKtZ4Q.svg"} />
+            <Image7 src={"https://file.rendit.io/n/mLyV1yOfqLdjaSGl7lGx.svg"} />
+            <Image8 src={"https://file.rendit.io/n/TGuoX4pH2X8q6IZlMusz.svg"} />
+            <Image9 src={"https://file.rendit.io/n/DQQUkiBpTQ9Xd6DCSySB.svg"} />
           </FlexRow2>
-          <FlexRow padding={"0px 2px"}>
+          <FlexRow10 padding={"0px 2px"}>
             <Text14 margin={"0px 36px 0px 0px"}>3.2K</Text14>
             <Text15>115</Text15>
             <Text16>5</Text16>
-            <Text14 margin={"0"}>1.3K</Text14>
-          </FlexRow>
+            <Text14 margin={"0px 0px 0px 0px"}>1.3K</Text14>
+          </FlexRow10>
         </WhiteFlexColumn1>
         <WhiteFlexColumn2>
           <Text18>Comment</Text18>
           <Element10>
-            <Text19>Your comment goes here</Text19>
-            <FlexRow4>
-              <FlexRow5>
-                <Text20>Post</Text20>
-              </FlexRow5>
-            </FlexRow4>
+            <Text19 type="text" placeholder="Your comment goes here" />
+            <FlexRow5>
+              <Text20>Post</Text20>
+            </FlexRow5>
           </Element10>
-          <Text21>See all comments</Text21>
         </WhiteFlexColumn2>
       </FlexColumn>
     </UserProfileRoot>
@@ -114,6 +117,11 @@ const UserProfileRoot = styled.div`
   justify-content: flex-start;
   margin: auto;
   align-items: center;
+  position: fixed;
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
 `;
 const WhiteFlexColumn = styled.div`
   height: 112px;
@@ -130,14 +138,14 @@ const WhiteFlexColumn = styled.div`
 const Back = styled.img`
   width: 47px;
   height: 50px;
-  margin: 0px 80px 0px 0px;
+  margin: 0px 0px 0px 0px;
 `;
 const Text2 = styled.div`
   font-size: 23px;
   font-family: Ubuntu;
   font-weight: 700;
   color: #4e0ca2;
-  margin: 0px 86px 0px 0px;
+  margin: 0px 0px 0px 0px;
 `;
 const DotsThreeCircle = styled.img`
   width: 32px;
@@ -282,8 +290,8 @@ const FlexRow = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-between;
   padding: ${(props) => props.padding};
 `;
 const Posts1 = styled.div`
@@ -311,24 +319,25 @@ const FlexColumn = styled.div`
   margin: ${(props) => props.margin};
 `;
 const WhiteFlexColumn1 = styled.div`
-  height: 408px;
+  width: 100%;
   background-color: #ffffff;
+  margin: 0px auto 0px auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 15px;
-  padding: 9px 13px 9px 22px;
+  padding: 9px 8px 9px 5px;
 `;
 const FlexRow1 = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 0px 8px;
+  padding: 0px 0px;
 `;
 const Ellipse2 = styled.div`
   height: 50px;
-  background-image: url("");
+  background-image: url("https://file.rendit.io/n/ZLFPU0WpjNcbUncMW7wL.png");
   background-size: cover;
   align-self: flex-end;
   display: flex;
@@ -343,8 +352,7 @@ const Verified = styled.img`
   height: 14px;
 `;
 const FlexColumn1 = styled.div`
-  align-self: stretch;
-  width: 180px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -399,12 +407,12 @@ const Line3 = styled.img`
   margin: 0px 0px 14px 0px;
 `;
 const Paragraph = styled.div`
+  width: 100%;
   height: 59px;
   font-size: 10px;
   font-family: Ubuntu;
   font-weight: 400;
-  align-self: flex-end;
-  margin: 0px 0px 12px 0px;
+  margin: 0px 0px 12px 10px;
   white-space: pre-wrap;
 `;
 const Text13 = styled.div`
@@ -414,7 +422,7 @@ const Text13 = styled.div`
   display: contents;
 `;
 const UnsplashsqPLlXc = styled.div`
-  width: 313px;
+  width: 100%;
   background-color: #c4c4c4;
   display: flex;
   align-self: flex-start;
@@ -422,7 +430,7 @@ const UnsplashsqPLlXc = styled.div`
   justify-content: center;
   align-items: center;
   padding: 77px 0px 78px 0px;
-  margin: 0px 0px 16px 2px;
+  margin: 10px 0px 5px 2px;
 `;
 const Ellipse1 = styled.div`
   width: 18.88px;
@@ -439,11 +447,12 @@ const Polygon = styled.img`
   height: 16.8px;
 `;
 const FlexRow2 = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 0px 0px 8.05px 0px;
+  margin: 10px 0px 8.05px 0px;
 `;
 const Image6 = styled.img`
   width: 26.19px;
@@ -469,7 +478,8 @@ const Image9 = styled.img`
 const Options = styled.img`
   width: 33px;
   height: 11px;
-  align-self: flex-start;
+  align-self: flex-end;
+  justify-self: flex-end;
   margin: 1.5px 0px 0px 0px;
 `;
 const Text14 = styled.div`
@@ -486,7 +496,7 @@ const Text15 = styled.div`
   font-size: 10px;
   font-family: Ubuntu;
   font-weight: 400;
-  margin: 0px 43px 0px 0px;
+  margin: 0px 100px 0px 0px;
 `;
 const Text16 = styled.div`
   width: 7px;
@@ -494,9 +504,10 @@ const Text16 = styled.div`
   font-size: 10px;
   font-family: Ubuntu;
   font-weight: 400;
-  margin: 0px 41px 0px 0px;
+  margin: 0px -70px 0px 0px;
 `;
 const WhiteFlexColumn2 = styled.div`
+  width: 90%;
   height: 76px;
   background-color: #ffffff;
   display: flex;
@@ -521,13 +532,13 @@ const Element10 = styled.div`
   min-width: 326px;
   margin: 0px 0px 10px 0px;
 `;
-const Text19 = styled.div`
-  width: 114px;
-  height: 12px;
+const Text19 = styled.input`
+  width: 80%;
+  height: 40px;
+  padding: 20px;
   font-size: 10px;
   font-family: Ubuntu;
   color: rgba(0, 0, 0, 0.5);
-  position: absolute;
   top: 13px;
   left: 9px;
 `;
@@ -568,4 +579,10 @@ const Text21 = styled.div`
   color: rgba(0, 0, 0, 0.8);
   align-self: flex-end;
   margin: 0px 4px 0px 0px;
+`;
+
+const FlexRow10 = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
 `;
