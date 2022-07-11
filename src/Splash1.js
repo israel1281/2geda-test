@@ -1,12 +1,13 @@
 import React from "react";
+import { Logo } from "./assets/_2GEDA21.png";
 import styled from "styled-components";
-import ReactLoading from "react-loading"
+import ReactLoading from "react-loading";
 export const Splash1 = ({}) => {
   return (
     <SplashRoot>
-      <GEDA src={"https://file.rendit.io/n/lEe43NhdRn0Jp6gejHVT.png"} />
+      <GEDA src={Logo} alt="logo" />
       <Text1>The Platform we build together</Text1>
-      <ReactLoading 
+      <ReactLoading
         type="spinningBubbles"
         color="#fff"
         height={40}
@@ -34,9 +35,8 @@ const Text1 = styled.div`
   font-family: Roboto;
   font-weight: 500;
   color: #ffffff;
-  width: 180px
+  width: 180px;
 `;
 const GEDA = styled.img`
   width: 50%;
-  height: 100%;
 `;
