@@ -36,6 +36,12 @@ export const Home3 = ({}) => {
   const { comments } = commentData;
 
   React.useEffect(() => {
+    if (sessionStorage.getItem("access_token") === "") {
+      navigate("/signin");
+    }
+  });
+
+  React.useEffect(() => {
     for (let i = 0; i < feedsArray.length; i++) {
       setUserImages(feedsArray[i].video);
       console.log(userImages);
@@ -285,18 +291,12 @@ export const Home3 = ({}) => {
                 <Image6
                   src={"https://file.rendit.io/n/yyebmukVgtI32hSwsjwW.svg"}
                 />
-                {isLiked ? (
-                  <Image7
-                    onClick={() => {
-                      LikePost(feed.id, access_token);
-                    }}
-                    src={"https://file.rendit.io/n/vqqnAuwvARHSTyjg0v8Z.svg"}
-                  />
-                ) : (
-                  <Image7
-                    src={"https://file.rendit.io/n/vqqnAuwvARHSTyjg0v8Z.svg"}
-                  />
-                )}
+                <Image7
+                  onClick={() => {
+                    LikePost(feed.id, access_token);
+                  }}
+                  src={"https://file.rendit.io/n/vqqnAuwvARHSTyjg0v8Z.svg"}
+                />
                 <Image8
                   onClick={() => {
                     DislikePost(feed.id, access_token, feed.email);
@@ -339,10 +339,15 @@ export const Home3 = ({}) => {
                 <Text14 margin={"0"}>{feed.dislikes}</Text14>
               </FlexRow3>
             </WhiteFlexColumn1>
-            <WhiteFlexColumn2>
+            <WhiteFlexColumn2
+              onClick={() => {
+                localStorage.setItem("postId", feed.id);
+                navigate("/post-preview");
+              }}
+            >
               <Text18>Comment</Text18>
               <Element22>
-                <FlexRow4 placeholder="your comment goes here" />
+                <FlexRow4 disabled placeholder="your comment goes here" />
                 <FlexRow5>
                   <Text20>Post</Text20>
                 </FlexRow5>

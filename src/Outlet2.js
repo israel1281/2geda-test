@@ -18,35 +18,20 @@ export const Outlet2 = ({}) => {
           <PurpleHeartText1>My inventory</PurpleHeartText1>
         </FlexRow1>
       </WhiteFlexColumn>
-      <WhiteFlexRow>
-        <Element33 width={"93px"}>
-          <Text5>Auto</Text5>
-          <CottonCandyText>Furniture</CottonCandyText>
-        </Element33>
-        <Text6>food</Text6>
-        <Element33 width={"53px"}>
-          <Element35>
-            <Element36 />
-            <Text7>Services</Text7>
-          </Element35>
-          <Erty>Property</Erty>
-          <Text8>Jewlery</Text8>
-        </Element33>
-      </WhiteFlexRow>
       <Text9 margin={"0px 0px 13px 14px"}>Trending</Text9>
       <WhiteFlexRow1>
         <FlexColumn alignSelf={"flex-end"}>
           <FlexRow3>
             {[
               {
-                src: "https://file.rendit.io/n/7hCLwMqAeCzHHJQQ96Xl.png",
+                src: "https://file.rendit.io/n/7hCLwMqAeCzHHJQQ96Xl.png"
               },
               {
-                src: "https://file.rendit.io/n/ckp7lAFSH3z6nuXJTV54.png",
+                src: "https://file.rendit.io/n/ckp7lAFSH3z6nuXJTV54.png"
               },
               {
-                src: "https://file.rendit.io/n/gxoxtYCzFbDUJcFh8xLv.png",
-              },
+                src: "https://file.rendit.io/n/gxoxtYCzFbDUJcFh8xLv.png"
+              }
             ].map((data) => (
               <UnsplashzbZEJJTo src={data.src} />
             ))}
@@ -55,16 +40,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Toyota Camry 07",
-                margin: "0px 17px 0px 0px",
+                margin: "0px 17px 0px 0px"
               },
               {
                 childText: "Washing Machine",
-                margin: "0px 13px 0px 0px",
+                margin: "0px 13px 0px 0px"
               },
               {
                 childText: "2 bedroom flat",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -73,16 +58,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#2,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#50,000",
-                margin: "0px 84px 0px 0px",
+                margin: "0px 84px 0px 0px"
               },
               {
                 childText: "#300,000 per annum",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -90,14 +75,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -141,14 +126,14 @@ export const Outlet2 = ({}) => {
           <FlexRow3>
             {[
               {
-                src: "https://file.rendit.io/n/l4BcpGXi8DUTDkZfKloF.png",
+                src: "https://file.rendit.io/n/l4BcpGXi8DUTDkZfKloF.png"
               },
               {
-                src: "https://file.rendit.io/n/dn5pmq161LXGGVCM2mI2.png",
+                src: "https://file.rendit.io/n/dn5pmq161LXGGVCM2mI2.png"
               },
               {
-                src: "https://file.rendit.io/n/T6nqZtZ3Ume0jMLdi1g1.png",
-              },
+                src: "https://file.rendit.io/n/T6nqZtZ3Ume0jMLdi1g1.png"
+              }
             ].map((data) => (
               <UnsplashzbZEJJTo src={data.src} />
             ))}
@@ -157,16 +142,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Toyota Camry 07",
-                margin: "0px 17px 0px 0px",
+                margin: "0px 17px 0px 0px"
               },
               {
                 childText: "Washing Machine",
-                margin: "0px 13px 0px 0px",
+                margin: "0px 13px 0px 0px"
               },
               {
                 childText: "2 bedroom flat",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -175,16 +160,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#2,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#50,000",
-                margin: "0px 84px 0px 0px",
+                margin: "0px 84px 0px 0px"
               },
               {
                 childText: "#300,000 per annum",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -192,14 +177,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -209,14 +194,14 @@ export const Outlet2 = ({}) => {
           <FlexRow3>
             {[
               {
-                src: "https://file.rendit.io/n/dAuTQoCS7fiQO27fRoYZ.png",
+                src: "https://file.rendit.io/n/dAuTQoCS7fiQO27fRoYZ.png"
               },
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
               },
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
-              },
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
+              }
             ].map((data) => (
               <UnsplashzbZEJJTo src={data.src} />
             ))}
@@ -225,16 +210,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Venza \u201812",
-                margin: "0px 60px 0px 0px",
+                margin: "0px 60px 0px 0px"
               },
               {
                 childText: "Iphone 13 pro",
-                margin: "0px 34px 0px 0px",
+                margin: "0px 34px 0px 0px"
               },
               {
                 childText: "Pes 5",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -243,16 +228,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#7,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#950,000",
-                margin: "0px 79px 0px 0px",
+                margin: "0px 79px 0px 0px"
               },
               {
                 childText: "#300,000",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -260,14 +245,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -299,16 +284,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Toyota Camry 07",
-                margin: "0px 17px 0px 0px",
+                margin: "0px 17px 0px 0px"
               },
               {
                 childText: "Washing Machine",
-                margin: "0px 13px 0px 0px",
+                margin: "0px 13px 0px 0px"
               },
               {
                 childText: "2 bedroom flat",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -317,16 +302,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#2,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#50,000",
-                margin: "0px 84px 0px 0px",
+                margin: "0px 84px 0px 0px"
               },
               {
                 childText: "#300,000 per annum",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -334,14 +319,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -351,14 +336,14 @@ export const Outlet2 = ({}) => {
           <FlexRow3>
             {[
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
               },
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
               },
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
-              },
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
+              }
             ].map((data) => (
               <UnsplashzbZEJJTo src={data.src} />
             ))}
@@ -367,16 +352,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Venza \u201812",
-                margin: "0px 60px 0px 0px",
+                margin: "0px 60px 0px 0px"
               },
               {
                 childText: "Iphone 13 pro",
-                margin: "0px 34px 0px 0px",
+                margin: "0px 34px 0px 0px"
               },
               {
                 childText: "Pes 5",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -385,16 +370,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#7,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#950,000",
-                margin: "0px 79px 0px 0px",
+                margin: "0px 79px 0px 0px"
               },
               {
                 childText: "#300,000",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -402,14 +387,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -435,16 +420,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Toyota Camry 07",
-                margin: "0px 17px 0px 0px",
+                margin: "0px 17px 0px 0px"
               },
               {
                 childText: "Washing Machine",
-                margin: "0px 13px 0px 0px",
+                margin: "0px 13px 0px 0px"
               },
               {
                 childText: "2 bedroom flat",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -453,16 +438,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#2,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#50,000",
-                margin: "0px 84px 0px 0px",
+                margin: "0px 84px 0px 0px"
               },
               {
                 childText: "#300,000 per annum",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -470,14 +455,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -487,14 +472,14 @@ export const Outlet2 = ({}) => {
           <FlexRow3>
             {[
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
               },
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
               },
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
-              },
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
+              }
             ].map((data) => (
               <UnsplashzbZEJJTo src={data.src} />
             ))}
@@ -503,16 +488,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Venza \u201812",
-                margin: "0px 60px 0px 0px",
+                margin: "0px 60px 0px 0px"
               },
               {
                 childText: "Iphone 13 pro",
-                margin: "0px 34px 0px 0px",
+                margin: "0px 34px 0px 0px"
               },
               {
                 childText: "Pes 5",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -521,16 +506,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#7,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#950,000",
-                margin: "0px 79px 0px 0px",
+                margin: "0px 79px 0px 0px"
               },
               {
                 childText: "#300,000",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -538,14 +523,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -571,16 +556,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Toyota Camry 07",
-                margin: "0px 17px 0px 0px",
+                margin: "0px 17px 0px 0px"
               },
               {
                 childText: "Washing Machine",
-                margin: "0px 13px 0px 0px",
+                margin: "0px 13px 0px 0px"
               },
               {
                 childText: "2 bedroom flat",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -589,16 +574,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#2,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#50,000",
-                margin: "0px 84px 0px 0px",
+                margin: "0px 84px 0px 0px"
               },
               {
                 childText: "#300,000 per annum",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -606,14 +591,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -623,14 +608,14 @@ export const Outlet2 = ({}) => {
           <FlexRow3>
             {[
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
               },
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
               },
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
-              },
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
+              }
             ].map((data) => (
               <UnsplashzbZEJJTo src={data.src} />
             ))}
@@ -639,16 +624,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Venza \u201812",
-                margin: "0px 60px 0px 0px",
+                margin: "0px 60px 0px 0px"
               },
               {
                 childText: "Iphone 13 pro",
-                margin: "0px 34px 0px 0px",
+                margin: "0px 34px 0px 0px"
               },
               {
                 childText: "Pes 5",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -657,16 +642,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#7,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#950,000",
-                margin: "0px 79px 0px 0px",
+                margin: "0px 79px 0px 0px"
               },
               {
                 childText: "#300,000",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -674,14 +659,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -694,14 +679,14 @@ export const Outlet2 = ({}) => {
           <FlexRow3>
             {[
               {
-                src: "https://file.rendit.io/n/7hCLwMqAeCzHHJQQ96Xl.png",
+                src: "https://file.rendit.io/n/7hCLwMqAeCzHHJQQ96Xl.png"
               },
               {
-                src: "https://file.rendit.io/n/ckp7lAFSH3z6nuXJTV54.png",
+                src: "https://file.rendit.io/n/ckp7lAFSH3z6nuXJTV54.png"
               },
               {
-                src: "https://file.rendit.io/n/gxoxtYCzFbDUJcFh8xLv.png",
-              },
+                src: "https://file.rendit.io/n/gxoxtYCzFbDUJcFh8xLv.png"
+              }
             ].map((data) => (
               <UnsplashzbZEJJTo src={data.src} />
             ))}
@@ -710,16 +695,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Toyota Camry 07",
-                margin: "0px 17px 0px 0px",
+                margin: "0px 17px 0px 0px"
               },
               {
                 childText: "Washing Machine",
-                margin: "0px 13px 0px 0px",
+                margin: "0px 13px 0px 0px"
               },
               {
                 childText: "2 bedroom flat",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -728,16 +713,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#2,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#50,000",
-                margin: "0px 84px 0px 0px",
+                margin: "0px 84px 0px 0px"
               },
               {
                 childText: "#300,000 per annum",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -745,14 +730,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -762,14 +747,14 @@ export const Outlet2 = ({}) => {
           <FlexRow3>
             {[
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
               },
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
               },
               {
-                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png",
-              },
+                src: "https://file.rendit.io/n/eqsQhA1JzOZSgRwQoG79.png"
+              }
             ].map((data) => (
               <UnsplashzbZEJJTo src={data.src} />
             ))}
@@ -778,16 +763,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "Venza \u201812",
-                margin: "0px 60px 0px 0px",
+                margin: "0px 60px 0px 0px"
               },
               {
                 childText: "Iphone 13 pro",
-                margin: "0px 34px 0px 0px",
+                margin: "0px 34px 0px 0px"
               },
               {
                 childText: "Pes 5",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text10 margin={data.margin}>{data.childText}</Text10>
             ))}
@@ -796,16 +781,16 @@ export const Outlet2 = ({}) => {
             {[
               {
                 childText: "#7,000,000",
-                margin: "0px 72px 0px 0px",
+                margin: "0px 72px 0px 0px"
               },
               {
                 childText: "#950,000",
-                margin: "0px 79px 0px 0px",
+                margin: "0px 79px 0px 0px"
               },
               {
                 childText: "#300,000",
-                margin: "0",
-              },
+                margin: "0"
+              }
             ].map((data) => (
               <Text13 margin={data.margin}>{data.childText}</Text13>
             ))}
@@ -813,14 +798,14 @@ export const Outlet2 = ({}) => {
           <FlexRow6>
             {[
               {
-                childText: "Lagos, Nigeria",
+                childText: "Lagos, Nigeria"
               },
               {
-                childText: "Abuja, Nigeria",
+                childText: "Abuja, Nigeria"
               },
               {
-                childText: "Alakia, Ibadan",
-              },
+                childText: "Alakia, Ibadan"
+              }
             ].map((data) => (
               <Text16>{data.childText}</Text16>
             ))}
@@ -847,7 +832,7 @@ const OutletRoot = styled.div`
   }
 `;
 const WhiteFlexColumn = styled.div`
-width: 100%;
+  width: 100%;
   height: 174px;
   background-color: #ffffff;
   display: flex;
@@ -857,69 +842,26 @@ width: 100%;
   padding: 15px 18px 13px 19px;
   margin: 0px 0px 16px 0px;
 `;
-const StatusBar = styled.div`
-  width: 338px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  margin: 0px 0px 32px 0px;
-`;
-const Element32 = styled.div`
-  align-self: stretch;
-  width: 50px;
-  height: 15px;
-  position: relative;
-  flex-grow: 1;
-  margin: 0px 229px 0px 0px;
-`;
-const Image1 = styled.img`
-  width: 12px;
-  height: 10px;
-  position: absolute;
-  top: 2px;
-  left: 38px;
-`;
-const Text1 = styled.div`
-  width: 45px;
-  font-size: 13px;
-  font-family: Roboto;
-  font-weight: 700;
-  color: #282828;
-  position: absolute;
-`;
-const Image2 = styled.img`
-  width: 14px;
-  height: 12px;
-  margin: 0px 5px 0px 0px;
-`;
-const Image3 = styled.img`
-  width: 16px;
-  height: 11px;
-  margin: 0px 5px 0px 0px;
-`;
-const Image4 = styled.img`
-  width: 19px;
-  height: 10px;
-`;
 const FlexRow = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px 6px 0px 4px;
-  margin: 0px 0px 2px 0px;
+  justify-content: space-between;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 `;
 const Back = styled.img`
   width: 47px;
   height: 50px;
-  margin: 0px 81px 0px 0px;
+  margin: 0px 0px 0px 0px;
 `;
 const Text2 = styled.div`
   font-size: 23px;
   font-family: Ubuntu;
   font-weight: 700;
   color: #4e0ca2;
-  margin: 0px 49px 0px 0px;
+  margin: 0px 0px 0px 0px;
 `;
 const PurpleHeartText = styled.div`
   display: flex;
@@ -929,13 +871,13 @@ const PurpleHeartText = styled.div`
   color: rgba(255, 255, 255, 0.8);
   align-self: flex-end;
   width: 78px;
-  height: 8px;
+  height: 30px;
   background-color: #4e0ca2;
   flex-direction: row;
   justify-content: center;
   border-radius: 4px;
-  padding: 5px 0px;
-  margin: 0px 0px 15px 0px;
+  padding: 5px 30px;
+  margin: 15px 0px 15px 0px;
 `;
 const Text3 = styled.div`
   font-size: 14px;
@@ -973,7 +915,7 @@ const Text4 = styled.input`
   border-width: 0px;
   background: none;
   width: 100%;
-  :: placeholder {
+  ::placeholder {
     color: rgba(0, 0, 0, 0.4);
   }
   display: inline-block;
@@ -994,6 +936,7 @@ const PurpleHeartText1 = styled.div`
   background-color: #4e0ca2;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   border-radius: 5px;
   padding: 13px 0px 12px 0px;
 `;
