@@ -1,8 +1,17 @@
 import React from "react";
+import { GetUser } from "./Api/User";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export const UserProfile1 = ({}) => {
+  const [userInfo, setUserInfo] = [];
+
+  const userId = sessionStorage.getItem("currentUser");
+
+  React.useEffect(() => {
+    GetUser(userId, setUserInfo);
+  }, [userId, setUserInfo]);
+
   const navigate = useNavigate();
   return (
     <UserProfileRoot>
