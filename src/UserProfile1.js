@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export const UserProfile1 = ({}) => {
-  const [userInfo, setUserInfo] = [];
+  const [userInfo, setUserInfo] = React.useState([]);
+  const [feedsArray, setFeedsArray] = React.useState([]);
+  const [postsArray, setPostsArray] = React.useState([]);
 
   const userId = sessionStorage.getItem("currentUser");
 
@@ -33,30 +35,30 @@ export const UserProfile1 = ({}) => {
         </FlexRow>
       </WhiteFlexColumn>
       <Ellipse>
-        <Image5 src={"https://file.rendit.io/n/vKWkiw9W1VsrL0QSxAnw.png"} />
+        <Image5 src={userInfo.cover_image} />
       </Ellipse>
-      <Text3>Ruth obe</Text3>
-      <Text4>Professional Tech Consultant</Text4>
-      <Text5>Lagos, Nigeria</Text5>
+      <Text3>{userInfo.name}</Text3>
+      <Text4>{userInfo.profession}</Text4>
+      <Text5>{userInfo.city}, Lagos</Text5>
       <PurpleHeartFlexRow>
         <Posts1>
           Posts
           <br />
-          <Posts>570</Posts>
+          <Posts>{userInfo.total_posts}</Posts>
         </Posts1>
         <Posts1>
           Followers
           <br />
-          <Posts>18m</Posts>
+          <Posts>{userInfo.total_followers}</Posts>
         </Posts1>
         <Posts1>
           Following
           <br />
-          <Posts>23k</Posts>
+          <Posts>{userInfo.total_followings}</Posts>
         </Posts1>
       </PurpleHeartFlexRow>
       <Element8>
-        <Text7>Posts (560)</Text7>
+        <Text7>Posts ({userInfo.total_posts})</Text7>
         <Text8>Outlet (0)</Text8>
         <Line src={"https://file.rendit.io/n/b5S9s9moTzKULFnl3Ig9.svg"} />
         <Line1 src={"https://file.rendit.io/n/b5S9s9moTzKULFnl3Ig9.svg"} />

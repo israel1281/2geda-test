@@ -24,7 +24,11 @@ export const Settings = ({}) => {
           src={"https://file.rendit.io/n/PFPi6YzDnGX6Xf7WsLuO.svg"}
         />
       </Top>
-      <Element1>
+      <Element1
+        onClick={() => {
+          navigate("/update-account");
+        }}
+      >
         <Line
           src={"https://file.rendit.io/n/BLDKl0cLEKAz7WUlEekm.svg"}
           left={"-0.5px"}

@@ -12,7 +12,6 @@ export const Splash1 = ({}) => {
         color="#fff"
         height={40}
         width={40}
-        marginTop={20}
       />
     </SplashRoot>
   );
