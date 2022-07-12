@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { UpdateUser } from "./Api/User";
+import ReactLoading from "react-loading";
 import { patchDataApi } from "./Data";
 import { notification } from "antd";
 import axios from "axios";
@@ -129,25 +130,37 @@ export const UpdateUser1 = ({}) => {
           top="90%"
         />
       </Element3>
-      <PurpleHeartText
-        onClick={() => {
-          UpdateUser(
-            first_name,
-            surname,
-            username,
-            address,
-            profession,
-            city,
-            bio,
-            dob,
-            userId,
-            access_token,
-            setLoading
-          );
-        }}
-      >
-        Update
-      </PurpleHeartText>
+      {!loading ? (
+        <PurpleHeartText
+          onClick={() => {
+            UpdateUser(
+              first_name,
+              surname,
+              username,
+              address,
+              profession,
+              city,
+              bio,
+              dob,
+              userId,
+              access_token,
+              setLoading
+            );
+          }}
+        >
+          Update
+        </PurpleHeartText>
+      ) : (
+        <PurpleHeartText>
+          <ReactLoading
+            type="cylon"
+            color="#fff"
+            height={40}
+            width={50}
+            marginTop={20}
+          />
+        </PurpleHeartText>
+      )}
     </ProfileDetailsRoot>
   );
 };
