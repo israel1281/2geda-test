@@ -1,25 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { UpdateUser } from "./Api/User";
 import { patchDataApi } from "./Data";
 import { notification } from "antd";
 import axios from "axios";
-export const UpdateUser = ({}) => {
+
+export const UpdateUser1 = ({}) => {
   const initialState = {
-    email: localStorage.getItem("email"),
-    password: "",
     first_name: "",
     surname: "",
-    username: ""
+    username: "",
+    address: "",
+    profession: "",
+    city: "",
+    bio: "",
+    dob: ""
   };
 
-  const [file, setFile] = React.useState(null);
   const [userData, setUserData] = React.useState(initialState);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState("");
   const [success, setSuccess] = React.useState("");
 
   const navigate = useNavigate();
+
+  const userId = sessionStorage.getItem("currentUser");
+  const access_token = sessionStorage.getItem("access_token");
 
   const alert = (type, message) => {
     notification[type]({
@@ -29,102 +36,118 @@ export const UpdateUser = ({}) => {
     });
   };
 
-  const homeNavigate = () => {
-    navigate("/");
-  };
-
-  const { email, password, first_name, surname, username } = userData;
+  const {
+    first_name,
+    surname,
+    username,
+    address,
+    profession,
+    city,
+    bio,
+    dob
+  } = userData;
 
   const handleInput = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-    setSuccess("");
-    axios
-      .patch("https://api.2geda.net/api/registerProfile", userData)
-      .then((res) => {
-        setLoading(false);
-        setSuccess(res.data.msg);
-        notification.success({
-          message: "Profile Updated, Please Login to Continue",
-          placement: "topLeft",
-          duration: 10
-        });
-        navigate("/");
-      })
-      .catch((err) => {
-        setLoading(false);
-        setError(err.response.data.msg);
-        alert("error", err.response.data.msg);
-      });
-  };
-
-  const onChange = async (e) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setFile(e.target.files[0]);
-    }
-  };
-
-  const fileInput = React.useRef(null);
 
   return (
     <ProfileDetailsRoot>
       <FlexRow>
         <Back
           onClick={() => {
-            navigate("/verify");
+            navigate("/profile");
           }}
           src={"https://file.rendit.io/n/iBtFuxHzfMnvC3VorHnN.svg"}
         />
         <GEDA src={"https://file.rendit.io/n/NP4n86zq5OcLLQqQ04ln.png"} />
       </FlexRow>
       <Element3>
-        <Text2>Profile details</Text2>
+        <Text2>Edit Profile details</Text2>
         <InputField
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleInput}
-          placeholder="email"
-        />
-        <InputField
-          top="40%"
-          type="text"
-          name=" password"
-          value={password}
-          onChange={handleInput}
-          placeholder=" password"
-        />
-        <InputField
-          top="80%"
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleInput}
-          placeholder="username"
-        />
-        <InputField
-          top="120%"
           type="text"
           name="first_name"
           value={first_name}
           onChange={handleInput}
           placeholder="first_name"
+          top="5%"
         />
         <InputField
-          top="160%"
           type="text"
           name="surname"
           value={surname}
           onChange={handleInput}
           placeholder="surname"
+          top="30%"
+        />
+        <InputField
+          type="text"
+          name="username"
+          value={username}
+          onChange={handleInput}
+          placeholder="username"
+          top="40%"
+        />
+        <InputField
+          type="text"
+          name="address"
+          value={address}
+          onChange={handleInput}
+          placeholder="address"
+          top="50%"
+        />
+        <InputField
+          type="text"
+          name="profession"
+          value={profession}
+          onChange={handleInput}
+          placeholder="profession"
+          top="60%"
+        />
+        <InputField
+          type="text"
+          name="city"
+          value={city}
+          onChange={city}
+          placeholder="city"
+          top="70%"
+        />
+        <InputField
+          type="text"
+          name="bio"
+          value={bio}
+          onChange={bio}
+          placeholder="bio"
+          top="80%"
+        />
+        <InputField
+          type="date"
+          name="dob"
+          value={dob}
+          onChange={handleInput}
+          placeholder="dob"
+          top="90%"
         />
       </Element3>
-      <PurpleHeartText onClick={handleSubmit}>Create account</PurpleHeartText>
+      <PurpleHeartText
+        onClick={() => {
+          UpdateUser(
+            first_name,
+            surname,
+            username,
+            address,
+            profession,
+            city,
+            bio,
+            dob,
+            userId,
+            access_token,
+            setLoading
+          );
+        }}
+      >
+        Update
+      </PurpleHeartText>
     </ProfileDetailsRoot>
   );
 };
@@ -133,13 +156,17 @@ const ProfileDetailsRoot = styled.div`
   height: 100%;
   background-color: #ffffff;
   display: flex;
-  overflow: hidden;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin: auto;
   position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
   align-items: center;
-  padding: 15px 18px 15px 19px;
+  padding: 15px 18px 15% 19px;
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
 `;
 const FlexRow = styled.div`
   height: 56px;
@@ -164,28 +191,23 @@ const Element3 = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 155px;
-  position: relative;
-  min-width: 338px;
-  margin: 0px 0px 10px 0px;
+  margin: 5px 0px 10px 0px;
 `;
 const Text2 = styled.div`
-  width: 241px;
-  height: 136px;
+  width: 100%;
+  height: 50px;
   font-size: 20px;
   font-family: Ubuntu;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.8);
-  position: absolute;
   left: 13px;
 `;
-const PurpleHeartText = styled.div`
+const PurpleHeartText = styled.button`
   display: flex;
   font-size: 17px;
   font-family: Ubuntu;
   font-weight: 300;
   color: #ffffff;
-  align-self: flex-start;
   width: 98%;
   height: 30px;
   background-color: #4e0ca2;
@@ -197,10 +219,11 @@ const PurpleHeartText = styled.div`
   margin: 70% 0px 0px 0px;
 `;
 const InputField = styled.input`
-  width: 90%;
+  width: 100%;
   height: 53px;
-  position: absolute;
   left: 13px;
   top: ${(props) => props.top};
   border-radius: 10px;
+  margin-top: 10px;
+  padding: 20px;
 `;

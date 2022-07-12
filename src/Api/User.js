@@ -1,5 +1,22 @@
 import axios from "axios";
 import FormData from "form-data";
+import { notification } from "antd";
+
+const Erroralert = (message) => {
+  notification.error({
+    message: message,
+    placement: "topLeft",
+    duration: 4
+  });
+};
+
+const Successalert = (message) => {
+  notification.success({
+    message: message,
+    placement: "topLeft",
+    duration: 4
+  });
+};
 
 export const GetUser = (userId, setUserInfo) => {
   const data = "";
@@ -31,8 +48,10 @@ export const UpdateUser = (
   bio,
   dob,
   userId,
-  access_token
+  access_token,
+  setLoading
 ) => {
+  setLoading(true);
   var data = new FormData();
   data.append("first_name", first_name);
   data.append("surname", surname);
@@ -47,15 +66,20 @@ export const UpdateUser = (
     method: "post",
     url: `https://api.2geda.net//api/user/${userId}`,
     headers: {
-      Authorization: "Bearer " + access_token,
-      ...data.getHeaders()
+      Authorization: "Bearer " + access_token
     },
     data: data
   };
 
   axios(config)
     .then(function (response) {
+      setLoading(false);
       console.log(JSON.stringify(response.data));
+      if (response.data.status === "success") {
+        Successalert(response.data.message);
+      } else if (response.data.status === "error") {
+        Erroralert("error!! Some fields are required");
+      }
     })
     .catch(function (error) {
       console.log(error);
