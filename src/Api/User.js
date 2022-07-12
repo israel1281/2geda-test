@@ -1,8 +1,7 @@
 import axios from "axios";
 import FormData from "form-data";
-import fs from "fs.js";
 
-export const GetUser = (userId) => {
+export const GetUser = (userId, setUserInfo) => {
   const data = "";
 
   const config = {
@@ -15,6 +14,7 @@ export const GetUser = (userId) => {
   axios(config)
     .then(function (response) {
       console.log(JSON.stringify(response.data));
+      setUserInfo(response.data);
     })
     .catch(function (error) {
       console.log(error);

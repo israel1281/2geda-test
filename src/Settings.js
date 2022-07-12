@@ -1,15 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import { GetUser } from "./Api/User";
 import { useNavigate } from "react-router-dom";
+
 export const Settings = ({}) => {
+  const [userInfo, setUserInfo] = React.useState([]);
+
   const navigate = useNavigate();
+  const UserId = sessionStorage.getItem("currentUser");
+
+  React.useEffect(() => {
+    GetUser(UserId, setUserInfo);
+  }, [userInfo, UserId]);
+
   return (
     <WhiteFlexColumnRoot>
       <Top>
         <GEDA src={"https://file.rendit.io/n/jqllIJLZtPiv6HPCqIB0.png"} />
         <X
           onClick={() => {
-            navigate("/home");
+            navigate("/profile");
           }}
           src={"https://file.rendit.io/n/PFPi6YzDnGX6Xf7WsLuO.svg"}
         />
