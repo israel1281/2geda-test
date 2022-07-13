@@ -48,6 +48,7 @@ export const SignIn2 = ({}) => {
         setLoading(false);
         sessionStorage.setItem("access_token", res.data.access_token);
         sessionStorage.setItem("currentUser", JSON.stringify(res.data.user.id));
+        sessionStorage.setItem("email", res.data.user.email);
         navigate("/home");
       })
       .catch((err) => {

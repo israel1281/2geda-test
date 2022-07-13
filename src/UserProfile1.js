@@ -2,6 +2,7 @@ import React from "react";
 import { GetUser } from "./Api/User";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios";
 
 export const UserProfile1 = ({}) => {
   const [userInfo, setUserInfo] = React.useState([]);
@@ -9,10 +10,62 @@ export const UserProfile1 = ({}) => {
   const [postsArray, setPostsArray] = React.useState([]);
 
   const userId = sessionStorage.getItem("currentUser");
+  const email = sessionStorage.getItem("email");
 
   React.useEffect(() => {
     GetUser(userId, setUserInfo);
   }, [userId, setUserInfo]);
+
+  React.useEffect(() => {
+    const filteredFeeds = feedsArray.filter((feed) => feed.type === "post");
+    setPostsArray(filteredFeeds);
+  }, [feedsArray]);
+
+  React.useEffect(() => {
+    axios
+      .get(`https://api.2geda.net/api/feed/${userId}`)
+      .then((res) => {
+        const feedsArray = Object.values(res.data);
+        setFeedsArray(feedsArray);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [userId]);
+
+  const date = (date) => {
+    const dateInSeconds = Date.parse(date);
+    const currentDate = Date.now();
+    const diff = currentDate - dateInSeconds;
+    const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+    const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor(diff / (1000 * 60));
+    const seconds = Math.floor(diff / 1000);
+    if (years > 0) {
+      return `${years} yrs ago`;
+    } else if (weeks > 0) {
+      return `${weeks} wks ago`;
+    } else if (days > 0) {
+      return `${days} day ago`;
+    } else if (hours > 0) {
+      return `${hours} hrs ago`;
+    } else if (minutes > 0) {
+      return `${minutes} min ago`;
+    } else if (seconds > 0) {
+      return `${seconds} sec ago`;
+    }
+  };
+
+  const addKM = (num) => {
+    if (num > 1000) {
+      return (num / 1000).toFixed(1) + "K";
+    } else if (num > 1000000) {
+      return (num / 1000000).toFixed(1) + "M";
+    }
+    return num;
+  };
 
   const navigate = useNavigate();
   return (
@@ -44,17 +97,17 @@ export const UserProfile1 = ({}) => {
         <Posts1>
           Posts
           <br />
-          <Posts>{userInfo.total_posts}</Posts>
+          <Posts>{addKM(userInfo.total_posts)}</Posts>
         </Posts1>
         <Posts1>
           Followers
           <br />
-          <Posts>{userInfo.total_followers}</Posts>
+          <Posts>{addKM(userInfo.total_followers)}</Posts>
         </Posts1>
         <Posts1>
           Following
           <br />
-          <Posts>{userInfo.total_followings}</Posts>
+          <Posts>{addKM(userInfo.total_followings)}</Posts>
         </Posts1>
       </PurpleHeartFlexRow>
       <Element8>
@@ -65,55 +118,69 @@ export const UserProfile1 = ({}) => {
         <Line2 src={"https://file.rendit.io/n/qBaFQIcSWMumNCW3uOs2.svg"} />
       </Element8>
       <FlexColumn margin={"0px auto 37px auto"}>
-        <WhiteFlexColumn1>
-          <FlexRow1>
-            <Ellipse2>
-              <Verified src={""} />
-            </Ellipse2>
-            <FlexColumn1>
-              <Element9>
-                <Text9>Dr. Salem Lawal</Text9>
-                <Text10>Pharmacist</Text10>
-              </Element9>
-              <Text11>Lagos, Nigeria</Text11>
-            </FlexColumn1>
-            <Text12>1hr ago</Text12>
-          </FlexRow1>
-          <Line3 src={""} />
-          <Paragraph>
-            This is the Opportunity to Join the World Leading Tech Professionals
-            in 2022. All you{"  "}need do is to register with the link below
-            <br />
-            <br />
-            <Text13>www.ileifetech.com/freshmen</Text13>
-          </Paragraph>
-          <UnsplashsqPLlXc>
-            <Ellipse1>
-              <Polygon src={""} />
-            </Ellipse1>
-          </UnsplashsqPLlXc>
-          <FlexRow2>
-            <Image6 src={"https://file.rendit.io/n/mJbaHBSx30Pa8ezKtZ4Q.svg"} />
-            <Image7 src={"https://file.rendit.io/n/mLyV1yOfqLdjaSGl7lGx.svg"} />
-            <Image8 src={"https://file.rendit.io/n/TGuoX4pH2X8q6IZlMusz.svg"} />
-            <Image9 src={"https://file.rendit.io/n/DQQUkiBpTQ9Xd6DCSySB.svg"} />
-          </FlexRow2>
-          <FlexRow10 padding={"0px 2px"}>
-            <Text14 margin={"0px 36px 0px 0px"}>3.2K</Text14>
-            <Text15>115</Text15>
-            <Text16>5</Text16>
-            <Text14 margin={"0px 0px 0px 0px"}>1.3K</Text14>
-          </FlexRow10>
-        </WhiteFlexColumn1>
-        <WhiteFlexColumn2>
-          <Text18>Comment</Text18>
-          <Element10>
-            <Text19 type="text" placeholder="Your comment goes here" />
-            <FlexRow5>
-              <Text20>Post</Text20>
-            </FlexRow5>
-          </Element10>
-        </WhiteFlexColumn2>
+        {postsArray.map((feed, index) => {
+          return (
+            <div
+              style={{
+                width: "100%"
+              }}
+              key={index}
+            >
+              <WhiteFlexColumn1>
+                <FlexRow1>
+                  <Ellipse2 src={feed.profile_pic} />
+                  <FlexColumn1>
+                    <Element9>
+                      <Text9>@{feed.poster_username}</Text9>
+                      <Text10>{feed.profession}</Text10>
+                    </Element9>
+                    <Text11>Lagos, Nigeria</Text11>
+                  </FlexColumn1>
+                  <Text12>{date(feed.date)}</Text12>
+                </FlexRow1>
+                <Line3 src={""} />
+                <Paragraph>
+                  {feed.text}
+                  <br />
+                  <br />
+                  <Text13>www.ileifetech.com/freshmen</Text13>
+                </Paragraph>
+                <UnsplashsqPLlXc>
+                  <Ellipse1 src={feed.image} />
+                </UnsplashsqPLlXc>
+                <FlexRow2>
+                  <Image6
+                    src={"https://file.rendit.io/n/mJbaHBSx30Pa8ezKtZ4Q.svg"}
+                  />
+                  <Image7
+                    src={"https://file.rendit.io/n/mLyV1yOfqLdjaSGl7lGx.svg"}
+                  />
+                  <Image8
+                    src={"https://file.rendit.io/n/TGuoX4pH2X8q6IZlMusz.svg"}
+                  />
+                  <Image9
+                    src={"https://file.rendit.io/n/DQQUkiBpTQ9Xd6DCSySB.svg"}
+                  />
+                </FlexRow2>
+                <FlexRow10 padding={"0px 2px"}>
+                  <Text14 margin={"0px 36px 0px 0px"}>{feed.likes}</Text14>
+                  <Text15>{feed.total_comments}</Text15>
+                  <Text16>5</Text16>
+                  <Text14 margin={"0px 0px 0px 0px"}>{feed.dislikes}</Text14>
+                </FlexRow10>
+              </WhiteFlexColumn1>
+              <WhiteFlexColumn2>
+                <Text18>Comment</Text18>
+                <Element10>
+                  <Text19 type="text" placeholder="Your comment goes here" />
+                  <FlexRow5>
+                    <Text20>Post</Text20>
+                  </FlexRow5>
+                </Element10>
+              </WhiteFlexColumn2>
+            </div>
+          );
+        })}
       </FlexColumn>
     </UserProfileRoot>
   );
@@ -161,6 +228,7 @@ const Text2 = styled.div`
 const DotsThreeCircle = styled.img`
   width: 32px;
   height: 32px;
+  border-radius: 50%;
 `;
 const Ellipse = styled.div`
   height: 114px;
@@ -176,6 +244,7 @@ const Ellipse = styled.div`
 const Image5 = styled.img`
   width: 106px;
   height: 106px;
+  border-radius: 50%;
 `;
 const Text3 = styled.div`
   font-size: 18px;
@@ -320,7 +389,7 @@ const Posts = styled.div`
   display: contents;
 `;
 const FlexColumn = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   align-self: flex-end;
   flex-direction: column;
@@ -340,22 +409,22 @@ const WhiteFlexColumn1 = styled.div`
   padding: 9px 8px 9px 5px;
 `;
 const FlexRow1 = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0px 0px;
 `;
-const Ellipse2 = styled.div`
+const Ellipse2 = styled.img`
   height: 50px;
-  background-image: url("https://file.rendit.io/n/ZLFPU0WpjNcbUncMW7wL.png");
   background-size: cover;
   align-self: flex-end;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 0px 4px 0px 32px;
+  padding: 0px 4px 0px 0px;
   margin: 0px 8px 0px 0px;
 `;
 const Verified = styled.img`
@@ -443,9 +512,8 @@ const UnsplashsqPLlXc = styled.div`
   padding: 77px 0px 78px 0px;
   margin: 10px 0px 5px 2px;
 `;
-const Ellipse1 = styled.div`
+const Ellipse1 = styled.img`
   width: 18.88px;
-  background-image: url("undefined");
   background-size: cover;
   display: flex;
   flex-direction: row;
